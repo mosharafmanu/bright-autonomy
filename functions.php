@@ -130,6 +130,8 @@ function bright_autonomy_scripts() {
 	wp_enqueue_style( 'bright-autonomy-design-style',   get_template_directory_uri() . '/assets/css/bright-autonomy-design-style.css',    array(), BRIGHT_AUTONOMY_VERSION );
 	wp_enqueue_style( 'bright-autonomy-form-style',    get_template_directory_uri() . '/assets/css/bright-autonomy-form.css',             array(), BRIGHT_AUTONOMY_VERSION );
 	wp_enqueue_style( 'bright-autonomy-starter-style',  get_template_directory_uri() . '/assets/css/bright-autonomy-starter-style.css',   array(), BRIGHT_AUTONOMY_VERSION );
+	wp_enqueue_style( 'bright-autonomy-imran',          get_template_directory_uri() . '/assets/css/imran.css',                          array(), BRIGHT_AUTONOMY_VERSION );
+	wp_enqueue_style( 'bright-autonomy-faisal',         get_template_directory_uri() . '/assets/css/faisal.css',                         array(), BRIGHT_AUTONOMY_VERSION );
 	wp_enqueue_style( 'bright-autonomy-style',          get_stylesheet_uri(),                                                           array(), BRIGHT_AUTONOMY_VERSION );
 
 	// ── Core JS ──────────────────────────────────────────────────
