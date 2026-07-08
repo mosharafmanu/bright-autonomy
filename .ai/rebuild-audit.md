@@ -257,8 +257,6 @@ Recreated:
 
 Preserved intentionally:
 
-- attachment posts in the database
-- attachment post meta
 - AIOSEO rows
 - published page records/slugs
 - reservation tables/data
@@ -267,9 +265,37 @@ Post-cleanup verification:
 
 - uploads directory size: `4.0K`
 - upload files remaining: `wp-content/uploads/index.php`
-- attachment posts: `73`
-- attachment meta rows: `150`
 - AIOSEO rows for preserved pages: `5`
+- `wp_reserve`: `82`
+- `wp_machines`: `180`
+
+## Media Library Cleanup Completed On 2026-07-08
+
+A database backup was created before removing Media Library records:
+
+- `backups/cleanup-2026-07-08/before-media-library-cleanup.sql`
+
+Removed:
+
+- attachment posts
+- attachment post meta
+- attachment term relationships
+- attachment comments/comment meta
+- AIOSEO rows for deleted attachment posts only
+
+Preserved:
+
+- AIOSEO rows for the five preserved public pages
+- published page records/slugs
+- reservation tables/data
+
+Post-cleanup verification:
+
+- attachment posts: `0`
+- orphan attachment/meta rows: `0`
+- orphan AIOSEO rows: `0`
+- AIOSEO rows for preserved pages: `5`
+- upload files remaining: `wp-content/uploads/index.php`
 - `wp_reserve`: `82`
 - `wp_machines`: `180`
 
