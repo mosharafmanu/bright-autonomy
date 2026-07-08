@@ -1,8 +1,8 @@
 /*!
 Theme Name: Bright Autonomy
 Theme URI: 
-Author: 
-Author URI: 
+Author: Mosharaf Hossain
+Author URI: https://mosharafmanu.com/
 Description: 
 Version: 1.0.0
 Requires at least: 6.0
@@ -23,25 +23,25 @@ Design Tokens
 :root {
 
 	/* Brand Colors */
-    --bright-color-primary:   #6d28d9;   /* Main brand color — headings, primary buttons, active states */
-    --bright-color-secondary: #4c1d95;   /* Supporting brand color — hover states, secondary accents */
-    --bright-color-accent:    #f59e0b;   /* Highlight / CTA / link color */
+    --bright-color-primary:   #4DACE8;   /* Main brand color — headings, primary buttons, active states */
+    --bright-color-secondary: #000000;   /* Supporting brand color — hover states, secondary accents */
+    --bright-color-accent:    #4DACE8;   /* Highlight / CTA / link color */
 
     /* Neutral */
-    --bright-color-dark:   #111827;      /* Dark text and dark section backgrounds */
-    --bright-color-mid:    #9ca3af;      /* Borders, muted text, disabled states */
-    --bright-color-subtle: #f3f4f6;      /* Very light section background tint */
+    --bright-color-dark:   #000000;      /* Dark text and dark section backgrounds */
+    --bright-color-mid:    #DBDBDB;      /* Borders, muted text, disabled states */
+    --bright-color-subtle: #666666;      /* Very light section background tint, body text */
     --bright-color-light:  #ffffff;      /* White / reversed-text backgrounds */
 
     /* Semantic aliases — wire once, change via brand colors above */
-    --bright-color-text:       var(--bright-color-dark);
+    --bright-color-text:       var(--bright-color-subtle);
     --bright-color-background: var(--bright-color-light);
     --bright-color-heading:    var(--bright-color-dark);
     --bright-color-link:       var(--bright-color-accent);
 
     /* Typography */
-    --bright-font-heading: 'Inter', sans-serif;
-    --bright-font-body:    'Inter', sans-serif;
+    --bright-font-heading: 'Roboto', sans-serif;
+    --bright-font-body:    'Roboto', sans-serif;
 
 	/* Container */
     --bright-container-max: 94.5rem;       /* 1512px */

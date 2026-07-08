@@ -8,7 +8,7 @@
             "name": "cms",
             "aria-label": "",
             "type": "flexible_content",
-            "instructions": "Build your page by adding and arranging content sections below. Each section is a modular layout component that you can customize independently. Drag sections to reorder them, and use the collapse/expand controls to manage your workspace efficiently. <strong>Note:</strong> When using the Page Builder, the standard WordPress content editor is hidden and the 'Show Page Title' setting in the sidebar is ignored.",
+            "instructions": "Build your page by adding and arranging content sections below. Each section is a modular layout component that you can customize independently. Drag sections to reorder them, and use the collapse\/expand controls to manage your workspace efficiently. <strong>Note:<\/strong> When using the Page Builder, the standard WordPress content editor is hidden and the 'Show Page Title' setting in the sidebar is ignored.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -27,47 +27,97 @@
                             "key": "field_example_title",
                             "label": "Title",
                             "name": "title",
+                            "aria-label": "",
                             "type": "text",
-                            "required": 0,
                             "instructions": "Section heading text.",
-                            "placeholder": "Section Title"
+                            "required": 0,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placeholder": "Section Title",
+                            "default_value": "",
+                            "maxlength": "",
+                            "prepend": "",
+                            "append": ""
                         },
                         {
                             "key": "field_example_description",
                             "label": "Description",
                             "name": "description",
+                            "aria-label": "",
                             "type": "wysiwyg",
-                            "required": 0,
                             "instructions": "Body text. Supports basic HTML.",
+                            "required": 0,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "tabs": "all",
                             "toolbar": "basic",
-                            "media_upload": 0
+                            "media_upload": 0,
+                            "default_value": "",
+                            "delay": 0
                         },
                         {
                             "key": "field_example_button_link",
                             "label": "Button Link",
                             "name": "button_link",
+                            "aria-label": "",
                             "type": "link",
+                            "instructions": "Optional CTA button. Leave empty to hide.",
                             "required": 0,
-                            "instructions": "Optional CTA button. Leave empty to hide."
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
                         },
                         {
                             "key": "field_example_image",
                             "label": "Image",
                             "name": "image",
+                            "aria-label": "",
                             "type": "image",
-                            "required": 0,
                             "instructions": "Optional section image.",
+                            "required": 0,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "return_format": "array",
-                            "preview_size": "medium"
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": 0,
+                            "min_height": 0,
+                            "min_size": 0,
+                            "max_width": 0,
+                            "max_height": 0,
+                            "max_size": 0,
+                            "mime_types": ""
                         },
                         {
                             "key": "field_example_background_color",
                             "label": "Background Colour",
                             "name": "background_color",
+                            "aria-label": "",
                             "type": "select",
-                            "required": 0,
                             "instructions": "Controls the section background via .bg-bright-{value} utility class. Values map to CSS tokens: light=--bright-color-light, subtle=--bright-color-subtle, primary=--bright-color-primary, dark=--bright-color-dark.",
+                            "required": 0,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "choices": {
                                 "light": "Light (White)",
                                 "subtle": "Subtle (Light Grey)",
@@ -75,7 +125,255 @@
                                 "dark": "Dark"
                             },
                             "default_value": "light",
-                            "allow_null": 0
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "return_format": "value",
+                            "create_options": 0,
+                            "save_options": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6a4e3e4996e10": {
+                    "key": "layout_6a4e3e4996e10",
+                    "name": "hero_section",
+                    "label": "Hero Section",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6a4e3e9196e12",
+                            "label": "Content",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0,
+                            "selected": 0
+                        },
+                        {
+                            "key": "field_6a4e3ea096e13",
+                            "label": "Hero Title",
+                            "name": "hero_title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Mission Control for Autonomous Outdoor Equipment",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_6a4e3ed196e14",
+                            "label": "Hero Description",
+                            "name": "hero_description",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Bright Autonomy delivers the command-and-control layer that enables OEMs to safely scale autonomous equipment across agriculture, turf, construction, and mining.",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "rows": "",
+                            "placeholder": "",
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_6a4e4492cc21d",
+                            "label": "Buttons",
+                            "name": "hero_buttons",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add Row",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_6a4e48b8cc220",
+                                    "label": "Button Link",
+                                    "name": "button_link",
+                                    "aria-label": "",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "allow_in_bindings": 0,
+                                    "parent_repeater": "field_6a4e4492cc21d"
+                                },
+                                {
+                                    "key": "field_6a4e48e8cc221",
+                                    "label": "Button Style",
+                                    "name": "button_style",
+                                    "aria-label": "",
+                                    "type": "button_group",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "primary": "Primary",
+                                        "light": "Light"
+                                    },
+                                    "default_value": "light",
+                                    "return_format": "value",
+                                    "allow_null": 0,
+                                    "allow_in_bindings": 0,
+                                    "layout": "horizontal",
+                                    "parent_repeater": "field_6a4e4492cc21d"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_6a4e3f2196e16",
+                            "label": "Media",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0,
+                            "selected": 0
+                        },
+                        {
+                            "key": "field_6a4e3f2f96e17",
+                            "label": "Media Type",
+                            "name": "media_type",
+                            "aria-label": "",
+                            "type": "button_group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "image": "Image",
+                                "video": "Video"
+                            },
+                            "default_value": "image",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "allow_in_bindings": 0,
+                            "layout": "horizontal"
+                        },
+                        {
+                            "key": "field_6a4e3f6696e18",
+                            "label": "Hero Image",
+                            "name": "hero_image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6a4e3f2f96e17",
+                                        "operator": "==",
+                                        "value": "image"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "allow_in_bindings": 0,
+                            "preview_size": "medium"
+                        },
+                        {
+                            "key": "field_6a4e3f7d96e19",
+                            "label": "Hero Video",
+                            "name": "hero_video",
+                            "aria-label": "",
+                            "type": "file",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6a4e3f2f96e17",
+                                        "operator": "==",
+                                        "value": "video"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "allow_in_bindings": 0
                         }
                     ],
                     "min": "",
@@ -106,7 +404,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "product"
+                "value": "post"
             }
         ]
     ],
@@ -120,5 +418,7 @@
     "description": "Flexible content page builder for creating custom page layouts. Build pages using modular, reusable content sections that can be arranged in any order to create unique page designs.",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1778837369
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1783518668
 }
