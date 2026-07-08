@@ -159,6 +159,26 @@ The new theme must rebuild the reservation form UI and submit to the preserved A
 - Any PHP/template/ACF changes should still follow the theme architecture docs.
 - Merge work back carefully after reviewing conflicts in `functions.php`, `style.css`, ACF JSON files, and section templates.
 
+## Latest Local Build Notes
+
+Hero section media handling was reviewed and corrected:
+
+- `template-parts/sections/hero_section.php` now uses `bright_autonomy_render_responsive_picture()` for hero images.
+- Hero video rendering now uses `bright_autonomy_render_video()` from the theme video system.
+- Hero Video ACF field was changed from a simple file field to a video-system group.
+- Hero Video admin fields were assigned wrapper widths so the edit screen is compact:
+  - source/file/url/poster/behavior fields: `50%`
+  - toggle fields: `25%`
+- The Page Builder JSON `modified` timestamp was bumped so ACF shows Sync.
+
+Required admin action after pulling this work:
+
+`WP Admin > Custom Fields > Field Groups > Sync Page Builder`
+
+Reference:
+
+`.ai/VIDEO-SYSTEM.md`
+
 ## Critical Warning
 
 If an AI agent starts from only this theme folder, they must understand that:
