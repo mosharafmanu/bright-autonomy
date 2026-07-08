@@ -4,6 +4,33 @@ Last updated: 2026-07-08
 
 This theme is the working base for the Bright Autonomy rebuild. The rest of the WordPress install was cleaned so the rebuild can start from a controlled ACF theme foundation while preserving URLs, SEO records, and the reservation system.
 
+## Repository Status
+
+Theme repository:
+
+`https://github.com/mosharafmanu/bright-autonomy.git`
+
+Branches pushed:
+
+| Branch | Purpose |
+| --- | --- |
+| `main` | shared baseline theme |
+| `imran` | Imran's working branch |
+| `faisal` | Faisal's working branch |
+
+Current shared baseline commit:
+
+`f0c22ec Move collaborator stylesheets to theme root`
+
+Temporary collaborator stylesheets are in the theme root:
+
+- `imran.css`
+- `faisal.css`
+
+Both are enqueued in `functions.php` after the starter/design/form styles and before root `style.css`.
+
+These files are temporary collaboration surfaces. Remove or consolidate them into the final stylesheet structure before launch.
+
 ## Project Goal
 
 Rebuild `bright-autonomy.com` from the client Adobe XD design using this custom ACF-based theme.
@@ -42,6 +69,14 @@ Theme architecture:
 - Section templates: `template-parts/sections/{layout_name}.php`
 - ACF JSON: `acf-json/`
 - Main docs: `.ai/ACF-PATTERNS.md`, `.ai/THEME-ARCHITECTURE.md`
+
+Important current files added for handoff/collaboration:
+
+- `.ai/PROJECT-HANDOFF.md`
+- `.ai/RESERVATION-SYSTEM.md`
+- `.ai/rebuild-audit.md`
+- `imran.css`
+- `faisal.css`
 
 Before building sections, sync the ACF JSON in WP Admin:
 
@@ -113,6 +148,15 @@ The new theme must rebuild the reservation form UI and submit to the preserved A
 10. Rebuild reservation form UI using the Bright Reservations backend.
 11. Test desktop/mobile, form submissions, email notifications, SEO output, sitemap, and URL status codes.
 
+## Collaboration Notes
+
+- Imran should work from branch `imran`.
+- Faisal should work from branch `faisal`.
+- Each branch currently contains the same baseline as `main`.
+- Use `imran.css` and `faisal.css` for temporary CSS work if needed.
+- Any PHP/template/ACF changes should still follow the theme architecture docs.
+- Merge work back carefully after reviewing conflicts in `functions.php`, `style.css`, ACF JSON files, and section templates.
+
 ## Critical Warning
 
 If an AI agent starts from only this theme folder, they must understand that:
@@ -121,4 +165,3 @@ If an AI agent starts from only this theme folder, they must understand that:
 - The reservation backend plugin is not part of the theme unless it is copied separately.
 - SEO data lives in the WordPress database, not in this theme.
 - This theme contains the rebuild framework and documentation, not the preserved production data.
-
