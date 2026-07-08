@@ -94,6 +94,8 @@ Old build cleanup completed:
 - Cleared old page body content and revisions.
 - Removed UpdraftPlus and old backups.
 - Deactivated WP Super Cache.
+- Removed files from `wp-content/uploads`, leaving only `wp-content/uploads/index.php`.
+- Preserved attachment posts/meta in the database at the client's request.
 
 Detailed cleanup history is in:
 
@@ -164,4 +166,5 @@ If an AI agent starts from only this theme folder, they must understand that:
 - The database cleanup was already done in the previous WordPress install.
 - The reservation backend plugin is not part of the theme unless it is copied separately.
 - SEO data lives in the WordPress database, not in this theme.
+- Upload files were removed from the old WordPress install, but attachment database rows were intentionally left in place.
 - This theme contains the rebuild framework and documentation, not the preserved production data.

@@ -245,6 +245,34 @@ Post-cleanup verification:
 - AIOSEO rows for preserved pages remain at `5`
 - reservation data remains intact
 
+## Upload Files Cleanup Completed On 2026-07-08
+
+Removed files/folders inside:
+
+- `wp-content/uploads`
+
+Recreated:
+
+- `wp-content/uploads/index.php`
+
+Preserved intentionally:
+
+- attachment posts in the database
+- attachment post meta
+- AIOSEO rows
+- published page records/slugs
+- reservation tables/data
+
+Post-cleanup verification:
+
+- uploads directory size: `4.0K`
+- upload files remaining: `wp-content/uploads/index.php`
+- attachment posts: `73`
+- attachment meta rows: `150`
+- AIOSEO rows for preserved pages: `5`
+- `wp_reserve`: `82`
+- `wp_machines`: `180`
+
 ## Theme Reset Completed On 2026-07-08
 
 Theme changes:
