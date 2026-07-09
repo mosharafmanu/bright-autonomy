@@ -44,9 +44,9 @@ if ( 'video' === $media_type && is_array( $hero_video ) && ! empty( $hero_video 
 }
 ?>
 
-<section class="<?php echo esc_attr( implode( ' ', $section_classes ) ); ?>">
+<section>
 	<div class="hero-section-inner">
-		<div class="hero-content">
+		<div class="hero-content <?php echo esc_attr( implode( ' ', $section_classes ) ); ?>">
 
 			<?php if ( $hero_title ) : ?>
 				<h1 class="hero-title"><?php echo esc_html( $hero_title ); ?></h1>
