@@ -4,20 +4,20 @@
     $content_title              = $overlay_content[ 'content_title' ];          		// ACF Text Field : Content Title
     $content_description        = $overlay_content[ 'content_description' ];    		// ACF Text Area Field : Content Description
     $content_buttons            = $overlay_content[ 'content_buttons' ] ;        		// ACF Text Repeater Field : Content Buttons
-    $show_content         = get_sub_field( 'show_content' );          	// ACF Rtue / False Field : BG Overlay
+    $show_content         		= get_sub_field( 'show_content' );          	// ACF Rtue / False Field : BG Overlay
 
     $background_type            = get_sub_field( 'background_type' ) ?: 'image';  	// ACF Button Group Field : Content BG Type solid/image/video 
     $content_image              = get_sub_field( 'content_image' );          		// ACF Imge Field : Content BG image
     $content_video              = get_sub_field( 'content_video' );          		// ACF Video Field : Content BG video
 
 
-	$show_content = '';
-	if ( $background_overlay === true ) {
+	$bg_overlay_class = '';
+	if ( $show_content === true ) {
 		$bg_overlay_class = 'background_overlay';
 	}
 
     $section_classes = [
-        'content-intro-inner',
+        'full-width-media-inner',
         'mc-container',
         'layout-padding',
     ];
@@ -38,11 +38,7 @@
 				<div class="content-intro-media-wrapper media">
 
 					<?php
-					if ( 'solid' === $background_type && ! empty( $bg_solid ) ) {
-						
-						$section_classes[] = 'content-intro-solid';
-						
-					} elseif ( 'image' === $background_type && $content_image && function_exists( 'bright_autonomy_render_responsive_picture' ) ) {
+					if ( 'image' === $background_type && $content_image && function_exists( 'bright_autonomy_render_responsive_picture' ) ) {
 						bright_autonomy_render_responsive_picture(
 							$content_image,
 							[

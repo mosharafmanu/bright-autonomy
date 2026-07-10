@@ -1,7 +1,8 @@
 <?php
     $content_title              = get_sub_field( 'content_title' );          // ACF Text Field : Content Title
     $content_description        = get_sub_field( 'content_description' );    // ACF Text Area Field : Content Description
-    $content_buttons            = get_sub_field( 'content_buttons' );        // ACF Text Repeater Field : Content Buttons
+    $content_buttons            = get_sub_field( 'content_buttons' );        // ACF Repeater Field : Content Buttons
+    $text_center                = get_sub_field( 'text_center' );            // ACF True / False Field : Text Center
 
 
     $section_classes = [
@@ -10,6 +11,10 @@
         'layout-padding',
     ];
 
+    $text_align_class = '';
+	if ( $text_center === true ) {
+		$text_align_class = 'text-center';
+	}
 
 
 ?>
@@ -18,7 +23,7 @@
     <div class="content-intro-section pt-lg-100 pt-50 <?php echo esc_attr( implode( ' ', $section_classes ) ); ?>">
 
 
-        <div class="content-section-content">
+        <div class="content-section-content <?php echo esc_attr( $text_align_class ) ; ?>">
 
             <?php if ( $content_title ) : ?>
                 <h2 class="h3-style content-intro-title"><?php echo esc_html( $content_title ) ; ?></h2>
