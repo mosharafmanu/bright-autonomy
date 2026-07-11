@@ -3,11 +3,49 @@
  */
 
 /* -----------------------------------------------
-   Header Start
+   Highlight Feature card Start
 ----------------------------------------------- */
+.highlight-feature-boxes {
+  display: grid;
+}
+.highlight-feature-card {
+  padding-top: 2rem;
+  padding-right: 4.5;
+  padding-bottom: 2.625rem;
+  padding-left: 3rem;
+}
+.highlight-feature-card {
+  background-color: var(--card-bg);
+  color: #fff;
+}
+.highlight-feature-card .highlight-card-title {
+  color: #fff;
+}
+.highlight-feature-card .highlight-card-body {
+  font-size: 1rem;
+}
 
+.highlight-feature-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight-feature-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background-image: url('http://localhost/ClientProjects/WordPress/2026/bright-autonomy-rebuild/wp-content/uploads/2026/07/Mask-Group-20.png');
+    background-size: cover;
+    background-position: center;
+
+    opacity: 1;
+    mix-blend-mode: screen;
+}
 
 
 /* -----------------------------------------------
-   Header End
+   Highlight Feature card End
 ----------------------------------------------- */
+
+
