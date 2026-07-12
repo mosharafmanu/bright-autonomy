@@ -994,9 +994,9 @@ h6,.h6-style {
     border-color: var(--bright-color-primary);
 }
 .btn-primary:hover {
-    background: var(--bright-color-secondary);
-    color: var(--bright-color-light);
-    border-color: var(--bright-color-secondary);
+    background: #fff;
+    color: var(--bright-color-dark);
+    border-color: #fff;
 }
 
 /* ── Secondary: accent fill, dark text → primary fill on hover */
