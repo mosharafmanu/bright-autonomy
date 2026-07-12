@@ -23,7 +23,7 @@
 
 ?>
 
-<div class="media-content-5050-section">
+<section class="media-content-5050-section">
     <div class="<?php echo esc_attr( implode( ' ', $section_classes ) ); ?>">
 
         <div class="<?php echo esc_attr( implode( ' ', $row_classes ) ); ?>">
@@ -88,4 +88,4 @@
         </div>
 
     </div>
-</div>
+</section>
