@@ -3,8 +3,7 @@
     $column_count       = get_sub_field( 'column' ) ?: '3';                 // ACF Button Group Field : Column Count 2,3,4
 
     $section_classes = [
-        'highlight-feature-section mt-50 mt-lg-80',
-        'mc-container',
+        'highlight-feature-section pt-50 pb-50 pt-lg-80 pb-lg-80',
         'layout-padding',
         
     ];
@@ -25,6 +24,8 @@
 ?>
 
 <section class="<?php echo esc_attr( implode( ' ', $section_classes ) ); ?>" >
+    <div class="mc-container">
+
     <?php 
         if ( $highlight_card ) :
 
@@ -67,5 +68,5 @@
     </div>
 
     <?php endif; ?>
-
+  </div>
 </section>

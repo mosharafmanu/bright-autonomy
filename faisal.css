@@ -2,10 +2,17 @@
  * Temporary stylesheet for Faisal's branch work.
  */
 
+
+ /* Header Style Start */
 .site-header {
-  background-color: var(--bright-color-dark);
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+	background-color: var(--bright-color-dark);
+	padding-top: 1.25rem;
+	padding-bottom: 1.25rem;
+	/* position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 99; */
 }
 .header-main-inner {
   display: flex;
@@ -64,3 +71,220 @@
 .site-header-actions .site-btn {
   padding: .625rem 2.375rem;
 }
+/* Header Style End */
+
+
+/* Hero Style Start */
+.hero-section-inner {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 100%;
+}
+.hero-media {
+  position: relative;
+  overflow: hidden;
+  height: 67.5rem;
+}
+.hero-media:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.hero-content, .hero-media {
+  grid-row: 1;
+  grid-column: 1;
+  z-index: 2;
+}
+.hero-content {
+	position: relative;
+	z-index: 99;
+  color: #fff;
+}
+.hero-title {
+  font-style: normal;
+  font-weight: 500;
+  line-height: 111.538%;
+  letter-spacing: -.1235rem;
+  color: #fff;
+  max-width: 44.25rem;
+}
+.hero-description {
+  max-width: 40.5rem;
+  margin-top: 1.5rem;
+}
+.hero-buttons {
+	margin-top: 2.5rem;
+}
+.hero-buttons .site-btn {
+  border-radius: .25rem;
+  border: .125rem solid #4DACE8;
+  background: #FFF;
+  font-size: 1rem;
+}
+@media only screen and (max-width:1199px) {
+.hero-media {
+  height: 40rem;
+}
+}
+@media only screen and (max-width:991px) {
+.hero-media {
+  height: 35rem;
+}
+}
+@media only screen and (max-width:767px) {
+.hero-media {
+  height: 30rem;
+}
+}
+/* Hero Style End */
+
+
+/* Content Intro Style Start */
+.content-intro-title {
+  font-weight: 400;
+  line-height: 148.718%;
+  letter-spacing: -.092625rem;
+}
+.content-intro-description {
+  max-width: 62.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.content-intro-section {
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+}
+.content-intro-media, 
+.content-section-content {
+  grid-row: 1;
+  grid-column: 1;
+}
+.content-intro-media {
+	height: 50.875rem;
+  position: relative;
+}
+.background_overlay:before,
+.content-intro-video-wrapper:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.content-section-content.full-width-media-inner {
+	position: relative;
+	z-index: 2;
+  text-align: center;
+  color: #fff;
+}
+.full-width-media-inner .content-intro-title {
+  color: #fff;
+}
+.full-width-media-inner .content-intro-description {
+	max-width: 48.375rem;
+}
+@media only screen and (max-width:991px) {
+.content-intro-media {
+	height: 30rem;
+}
+}
+@media only screen and (max-width:767px) {
+.content-intro-media {
+	height: 25rem;
+}
+}
+/* Content Intro Style End */
+
+
+/* Highlight Card Style Start */
+.highlight-feature-section {
+	background-color: #FAFAFA;
+}
+.highlight-card-title {
+  margin-bottom: 0;
+}
+.highlight-feature-card:nth-child(2) .highlight-card-title {
+	max-width: 12.9375rem;
+}
+/* Highlight Card Style End */
+
+
+
+.media-content-5050-row{
+	display: grid;
+  column-gap: 8.75rem;
+	grid-template-columns: 1fr 1fr;
+}
+.mc5050-eyebrow {
+  color: var(--bright-color-dark);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 290%;
+  text-transform: uppercase;
+}
+.mc5050-title {
+	margin-top: 1.25rem;
+	/* font-size: 3.25rem; */
+	font-weight: 400;
+	line-height: 111.538%;
+	letter-spacing: -.1235rem;
+	max-width: 39.9375rem;
+}
+.mc5050-body.wysiwyg-content p {
+	margin-top: 1.875rem;
+}
+.mc5050-body.wysiwyg-content p:last-child {
+	color: var(--bright-color-dark);
+	font-style: normal;
+	font-weight: 500;
+	 margin-top: 3.125rem;
+}
+.mc5050-content{
+    grid-area: content;
+}
+.mc5050-media {
+    grid-area: media;
+}
+.media-content-5050-row.media-right {
+    grid-template-areas: "content media";
+}
+.media-content-5050-row.media-left {
+    grid-template-areas: "media content";
+}
+
+@media only screen and (max-width:991px) {
+    .media-content-5050-row{
+      column-gap: 3rem;
+    }
+    .mc5050-img {
+	    height: auto !important;
+    }
+    .mc5050-body.wysiwyg-content p:last-child {
+      margin-top: 2rem;
+    }
+}
+
+@media only screen and (max-width:767px) {
+  .media-content-5050-row{
+        row-gap: 2rem;
+    }
+   .media-content-5050-row.media-right {
+        grid-template-areas: 
+        "media" 
+        "content";
+        grid-template-columns: 1fr;
+    }
+  .media-content-5050-row.media-left {
+        grid-template-areas: 
+        "media"
+        "content";
+        grid-template-columns: 1fr;
+    }
+}
+
