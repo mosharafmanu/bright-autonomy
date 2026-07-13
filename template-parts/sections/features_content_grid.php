@@ -6,8 +6,7 @@
     $feature_items  = get_sub_field( 'feature_content_items' );         // ACF Repeater Field : Feature Items
 
     $section_classes = [
-        'feature-content-section mt-50 mt-lg-80',
-        'mc-container',
+        'feature-content-section mt-50 mt-lg-85 pt-50 pb-50 pt-lg-70 pb-lg-90',
         'layout-padding',
         
     ];
@@ -24,11 +23,12 @@
 
 
 <section class="<?php echo esc_attr( implode( ' ', $section_classes ) ); ?>">
-        <div class="feature-content-inner">
+    <div class="mc-container">
+         <div class="feature-content-inner">
             <div class="feature-content-content">
                 
                 <?php if ($title): ?>
-                    <h2 class="feature-content-title"><?php echo wp_kses($title, ['br' => []]); ?></h2>
+                    <h2 class="feature-content-title text-center"><?php echo wp_kses($title, ['br' => []]); ?></h2>
                 <?php endif; ?>
                 
                 <?php if ($body): ?>
@@ -86,4 +86,5 @@
                 <?php endif; ?>
             </div>
         </div>
+    </div>
 </section>

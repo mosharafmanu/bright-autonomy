@@ -7,8 +7,7 @@
 
 
     $section_classes = [
-        'image-card-grid-section mt-50 mt-lg-80',
-        'mc-container',
+        'image-card-grid-section pt-50 pb-60 pt-lg-90 pb-lg-150',
         'layout-padding',
         
     ];
@@ -22,12 +21,12 @@
 ?>
 
 
-<section>
-	<div class="<?php echo esc_attr( implode( ' ', $section_classes ) ); ?>">
+<section class="<?php echo esc_attr( implode( ' ', $section_classes ) ); ?>"> 
+	<div class="mc-container">
 		<div class="image-card-grid-section-content ">
 
 			<?php if ( $title ) : ?>
-				<h4 class="image-card-grid-section-title"><?php echo esc_html( $title ); ?></h4>
+				<h2 class="image-card-grid-section-title h1-style"><?php echo esc_html( $title ); ?></h2>
 			<?php endif; ?>
 
 			<?php if ( $body ) : ?>
@@ -74,13 +73,15 @@
                                 <span class="highlight-badge-title <?php echo esc_attr( implode( ' ', $highlight_badge ) ); ?> "><?php echo wp_kses($badge_title, ['br' => []]); ?></span>
                             <?php endif; ?>
 
-                            <?php if ($title): ?>
-                                <h3 class="h5-style highlight-card-title"><?php echo wp_kses($title, ['br' => []]); ?></h3>
-                            <?php endif; ?>
+                             <div class="image-card-content">
+                                <?php if ($title): ?>
+                                    <h3 class="h4-style highlight-card-title"><?php echo wp_kses($title, ['br' => []]); ?></h3>
+                                <?php endif; ?>
 
-                            <?php if ($body): ?>
-                                <p class=" highlight-card-body"><?php echo wp_kses($body, ['br' => []]); ?></p>
-                            <?php endif; ?>
+                                <?php if ($body): ?>
+                                    <p class=" highlight-card-body"><?php echo wp_kses($body, ['br' => []]); ?></p>
+                                <?php endif; ?>
+                             </div>
                             
                         </div>
 
@@ -139,7 +140,5 @@
             ?>
 
         </div>
-
-
-	</div>
+    </div>
 </section>
