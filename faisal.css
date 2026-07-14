@@ -215,9 +215,13 @@
 
 
 /* Media Content 5050 Style Start */
+
+.mc-5050-bg {
+  background-color: #FAFAFA;
+}
 .media-content-5050-row{
 	display: grid;
-  column-gap: 8.75rem;
+  column-gap: 7.4375rem;
 	grid-template-columns: 1fr 1fr;
 }
 .mc5050-eyebrow {
@@ -252,6 +256,10 @@
 }
 .mc5050-media {
     grid-area: media;
+    /* height: 38.125rem; */
+}
+.mc-5050-bg .mc5050-media  {
+ margin-right: -12rem;
 }
 .media-content-5050-row.media-right {
     grid-template-areas: "content media";
