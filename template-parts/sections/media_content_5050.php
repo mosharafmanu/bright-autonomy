@@ -7,12 +7,21 @@
     $media_type     = get_sub_field( 'mc5050_media_type' ) ?: 'image';      // ACF Button Group Field : Media Type image / video 
     $image          = get_sub_field( 'mc5050_image' );                      // ACF Image Field : Image
     $video          = get_sub_field( 'mc5050_video' );                      // ACF Group Field : Video
+    $section_bg     = get_sub_field( 'mc5050_bg_color' );                   // ACF true/false : Section Background
 
     $has_image = ( 'image' === $media_type && ! empty( $image ) );
     $has_video = ( 'video' === $media_type && ! empty( $video ) );
     $has_media = $has_image || $has_video;
 
     $section_classes = [
+        'media-content-5050-section',
+    ];
+
+    if ( true === $section_bg ) {
+        $section_classes[] = 'mc-5050-bg';
+    }
+
+    $section_inner_classes = [
         'media-content-5050-inner mt-50 mt-lg-80',
         'mc-container',
         'layout-padding',
@@ -23,8 +32,8 @@
 
 ?>
 
-<section class="media-content-5050-section">
-    <div class="<?php echo esc_attr( implode( ' ', $section_classes ) ); ?>">
+<section class="<?php echo esc_attr( implode( ' ', $section_classes ) ); ?>">
+    <div class="<?php echo esc_attr( implode( ' ', $section_inner_classes ) ); ?>">
 
         <div class="<?php echo esc_attr( implode( ' ', $row_classes ) ); ?>">
 
