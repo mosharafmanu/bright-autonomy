@@ -4079,7 +4079,7 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "primary": "Primary",
+                                        "btn-primary": "Primary",
                                         "light": "Light"
                                     },
                                     "default_value": "light",
@@ -4180,5 +4180,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1784031510
+    "modified": 1784036161
 }
