@@ -50,7 +50,11 @@
             <?php if ( $testimonial->have_posts()) : ?>
             <?php while ( $testimonial->have_posts()) : $testimonial->the_post(); ?>
 
-            <?php get_template_part('inc/components/cards/testimonial-card' , 'page') ?>
+            <?php
+            if ( function_exists( 'bright_autonomy_render_testimonial_card' ) ) {
+                bright_autonomy_render_testimonial_card();
+            }
+            ?>
 
 
         <?php endwhile; endif; endif; ?>
