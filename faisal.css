@@ -521,7 +521,7 @@
   grid-column: 1;
 }
 .contact-cta-section::after {
-  position: absolute;
+  position: absolute; 
   content: "";
   width: 100%;
   height: 100%;
