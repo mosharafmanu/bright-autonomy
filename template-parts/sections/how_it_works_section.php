@@ -27,10 +27,10 @@
 <section class="how-it-works-section" >
 
     <div class="">
-        <div class="how-it-works-section-content <?php echo esc_attr( implode( ' ', $section_classes ) ); ?> ">
+        <div class="how-it-works-section-content text-center <?php echo esc_attr( implode( ' ', $section_classes ) ); ?> ">
 
             <?php if ( $title ) : ?>
-                <h4 class="how-it-works-section-title"><?php echo esc_html( $title ); ?></h4>
+                <h3 class="how-it-works-section-title h1-style"><?php echo esc_html( $title ); ?></h3>
             <?php endif; ?>
 
             <?php if ( $body ) : ?>
