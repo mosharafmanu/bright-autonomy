@@ -8,6 +8,7 @@
     $image          = get_sub_field( 'mc5050_image' );                      // ACF Image Field : Image
     $video          = get_sub_field( 'mc5050_video' );                      // ACF Group Field : Video
     $section_bg     = get_sub_field( 'mc5050_bg_color' );                   // ACF true/false : Section Background
+    $media_overflow = get_sub_field( 'mc5050_media_overflow' );             // ACF true/false : Media Overflow Container
 
     $has_image = ( 'image' === $media_type && ! empty( $image ) );
     $has_video = ( 'video' === $media_type && ! empty( $video ) );
@@ -28,7 +29,12 @@
         
     ];
 
-    $row_classes = [ 'media-content-5050-row', 'media-' . $media_position ];
+    $row_classes = [ 
+        'media-content-5050-row', 'media-' . $media_position 
+    ];
+    if ( true === $media_overflow ) {
+        $row_classes[] = 'media-overflow';
+    }
 
 ?>
 
