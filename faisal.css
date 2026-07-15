@@ -276,6 +276,9 @@
 .mc5050-video {
 	border-radius: .25rem;
 }
+.mc5050-img {
+	border-radius: .25rem;
+}
 .media-overflow {
 	align-items: center;
 }
