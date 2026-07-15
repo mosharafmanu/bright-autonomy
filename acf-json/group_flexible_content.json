@@ -258,8 +258,8 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "primary": "Primary",
-                                        "light": "Light"
+                                        "btn-primary": "Primary",
+                                        "btn-light": "Light"
                                     },
                                     "default_value": "light",
                                     "return_format": "value",
@@ -956,8 +956,8 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "primary": "Primary",
-                                        "light": "Light"
+                                        "btn-primary": "Primary",
+                                        "btn-light": "Light"
                                     },
                                     "default_value": "light",
                                     "return_format": "value",
@@ -1138,8 +1138,8 @@
                                                 "id": ""
                                             },
                                             "choices": {
-                                                "primary": "Primary",
-                                                "light": "Light"
+                                                "btn-primary": "Primary",
+                                                "btn-light": "Light"
                                             },
                                             "default_value": "light",
                                             "return_format": "value",
@@ -4101,7 +4101,7 @@
                                     },
                                     "choices": {
                                         "btn-primary": "Primary",
-                                        "light": "Light"
+                                        "btn-light": "Light"
                                     },
                                     "default_value": "light",
                                     "return_format": "value",
@@ -4201,5 +4201,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1784090666
+    "modified": 1784110249
 }
