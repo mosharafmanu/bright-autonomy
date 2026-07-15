@@ -255,7 +255,8 @@
     grid-area: content;
 }
 .mc5050-media {
-    grid-area: media;
+	grid-area: media;
+	height: 36.875rem;
 }
 .mc-5050-bg .mc5050-media  {
  margin-right: -13rem;
