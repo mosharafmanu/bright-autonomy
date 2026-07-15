@@ -518,28 +518,8 @@
 /* Image Card Grid Style End */
 
 
-/* How It Works Style Start */
-.how-it-works-section-body {
-  max-width: 53.75rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.75rem;
-}
-.how-it-works-box-inner {
-	display: grid;
-	column-gap: 6.25rem;
-	align-items: center;
-}
-.how-it-works-media-wrapper {
-	height: 14.25rem;
-}
-.process-step-number {
-	margin-top: 2.5rem;
-  display: block;
-}
-/* How It Works Style End */
 
-
+/* Contact Cta Style Start */
 .contact-cta-section {
   display: grid;
   align-items: center;
@@ -585,7 +565,7 @@
 
 
 
-
+/* Footer Style Start */
 .site-footer {
 	background-color: var(--bright-color-dark);
 }
@@ -660,3 +640,4 @@
 	row-gap: 2rem;
 }
 }
+/* Footer Style End */
