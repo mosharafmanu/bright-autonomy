@@ -980,8 +980,8 @@ h6,.h6-style {
     font-family: var(--bright-font-body);
     font-weight: var(--bright-btn-font-weight);
     text-decoration: none;
-    border-radius: var(--bright-border-radius);
-    border: 2px solid transparent;
+    border-radius: .25rem;
+    border: .125rem solid transparent;
     transition: all var(--bright-transition);
     cursor: pointer;
     text-align: center;

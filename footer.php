@@ -5,30 +5,35 @@
 
 ?>
 
-<footer id="colophon" class="site-footer mt-50 mt-md-70 mt-lg-100">
+<footer id="colophon" class="site-footer layout-padding pt-50 pb-50 pt-lg-80 pb-lg-80">
 
-	<div class="footer-top layout-padding">
+	<div class="mc-container">
+		<div class="footer-inner">
+			<div class="footer-left">
 
-		<?php if ( function_exists( 'bright_autonomy_render_footer_logo' ) ) : ?>
-			<?php bright_autonomy_render_footer_logo(); ?>
-		<?php endif; ?>
+				<?php if ( function_exists( 'bright_autonomy_render_footer_logo' ) ) : ?>
+					<?php bright_autonomy_render_footer_logo(); ?>
+				<?php endif; ?>
 
-		<?php if ( function_exists( 'bright_autonomy_render_footer_menu' ) ) : ?>
-			<?php bright_autonomy_render_footer_menu( [ 'location' => 'footerMenu', 'show_title' => false ] ); ?>
-		<?php endif; ?>
 
-	</div>
+				<?php if ( function_exists( 'bright_autonomy_render_footer_copyright' ) ) : ?>
+					<?php bright_autonomy_render_footer_copyright(); ?>
+				<?php endif; ?>
 
-	<div class="footer-bottom layout-padding">
+	       </div>
 
-		<?php if ( function_exists( 'bright_autonomy_render_footer_copyright' ) ) : ?>
-			<?php bright_autonomy_render_footer_copyright(); ?>
-		<?php endif; ?>
+			<div class="footer-right">
 
-		<?php if ( function_exists( 'bright_autonomy_render_social_medias' ) ) : ?>
-			<?php bright_autonomy_render_social_medias(); ?>
-		<?php endif; ?>
+				<?php if ( function_exists( 'bright_autonomy_render_social_medias' ) ) : ?>
+					<?php bright_autonomy_render_social_medias(); ?>
+				<?php endif; ?>
 
+				<?php if ( function_exists( 'bright_autonomy_render_footer_menu' ) ) : ?>
+					<?php bright_autonomy_render_footer_menu( [ 'location' => 'footerMenu', 'show_title' => false ] ); ?>
+				<?php endif; ?>
+
+			</div>
+		</div>
 	</div>
 
 </footer>
