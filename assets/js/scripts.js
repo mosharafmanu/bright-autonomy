@@ -394,3 +394,15 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		observer.observe( el );
 	} );
 } );
+
+jQuery(document).ready(function ($) {
+
+$('.layout-carousel"').slick({
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 3
+});
+
+});
+
+	

@@ -8,8 +8,7 @@
 
 
     $section_classes = [
-        'testimonial-section mt-50 mt-lg-80',
-        'mc-container',
+        'testimonial-section pt-50 pb-60 pt-lg-100 pb-lg-110',
         'layout-padding',
         
     ];
@@ -29,7 +28,8 @@
 
 <div class="<?php echo esc_attr( implode( ' ', $section_classes ) ); ?>">
 
-    <div class="testimonial-section-content">
+   <div class="mc-container">
+     <div class="testimonial-section-content text-center">
 
         <?php if ( $title ) : ?>
             <h4 class="h1-style testimonial-section"><?php echo esc_html( $title ); ?></h4>
@@ -60,6 +60,7 @@
         <?php endwhile; endif; endif; ?>
         <?php wp_reset_postdata(); ?>
     </div>
+   </div>
 
 
 </div>
