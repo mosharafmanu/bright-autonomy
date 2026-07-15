@@ -394,3 +394,18 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		observer.observe( el );
 	} );
 } );
+
+
+// Image Size Calculation for How It's Work Section
+window.addEventListener('load', () => {
+    const firstBox = document.querySelector('.how-it-works-box');
+    const image = firstBox?.querySelector('.how-it-works-image');
+    const boxesContainer = document.querySelector('.how-it-works-boxes');
+
+    if (image && boxesContainer) {
+        boxesContainer.style.setProperty(
+            '--step-position',
+            `${image.offsetHeight + 55}px`
+        );
+    }
+});

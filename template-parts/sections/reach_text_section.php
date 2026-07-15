@@ -16,6 +16,12 @@
 		$text_align_class = 'text-center';
 	}
 
+    $body_text = [];
+
+    if ( ! empty( $content_title ) ) {
+        $body_text[] = 'font-size-md';
+    }
+
 
 ?>
 
@@ -28,7 +34,7 @@
             <?php endif; ?>
 
             <?php if ( $content_description ) : ?>
-                <p class=" content-intro-description "><?php echo esc_html( $content_description ) ; ?></p>
+                <p class=" content-intro-description <?php echo esc_attr( implode( ' ', $body_text ) ); ?> "><?php echo esc_html( $content_description ) ; ?></p>
             <?php endif; ?>
 
             <?php
