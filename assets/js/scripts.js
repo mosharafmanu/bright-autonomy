@@ -396,6 +396,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 } );
 
 
+
 // Image Size Calculation for How It's Work Section
 window.addEventListener('load', () => {
     const firstBox = document.querySelector('.how-it-works-box');
@@ -409,3 +410,16 @@ window.addEventListener('load', () => {
         );
     }
 });
+
+jQuery(document).ready(function ($) {
+
+$('.layout-carousel"').slick({
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 3
+});
+
+});
+
+	
+
