@@ -120,7 +120,7 @@
 .hero-buttons {
 	margin-top: 2.5rem;
 }
-.hero-buttons .site-btn {
+.hero-buttons .site-btn.light-btn {
   border-radius: .25rem;
   border: .125rem solid #4DACE8;
   background: #FFF;
@@ -272,6 +272,9 @@
 }
 .mc5050-media {
 	grid-area: media;
+}
+.mc5050-video {
+	border-radius: .25rem;
 }
 .media-overflow {
 	align-items: center;
