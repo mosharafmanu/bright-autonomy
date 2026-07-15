@@ -5,55 +5,32 @@
 
 ?>
 
-<footer id="colophon" class="site-footer layout-padding pt-50 pb-50 pt-lg-80 pb-lg-80">
-
-	<div class="footer-left layout-padding">
+<footer id="colophon" class="site-footer mt-50 mt-md-70 mt-lg-100">
 
 	<div class="mc-container">
-		<div class="footer-inner">
-			<div class="footer-left">
+		<div class="footer-top layout-padding">
 
-				<?php if ( function_exists( 'bright_autonomy_render_footer_logo' ) ) : ?>
-					<?php bright_autonomy_render_footer_logo(); ?>
-				<?php endif; ?>
+			<?php if ( function_exists( 'bright_autonomy_render_footer_logo' ) ) : ?>
+				<?php bright_autonomy_render_footer_logo(); ?>
+			<?php endif; ?>
 
-		<?php if ( function_exists( 'bright_autonomy_render_footer_copyright' ) ) : ?>
-			<?php bright_autonomy_render_footer_copyright(); ?>
-		<?php endif; ?>
+			<?php if ( function_exists( 'bright_autonomy_render_footer_copyright' ) ) : ?>
+				<?php bright_autonomy_render_footer_copyright(); ?>
+			<?php endif; ?>
 
-	</div>
-
-	<div class="footer-right layout-padding">
-
-		
-
-		<?php if ( function_exists( 'bright_autonomy_render_social_medias' ) ) : ?>
-			<?php bright_autonomy_render_social_medias(); ?>
-		<?php endif; ?>
-
-		<?php if ( function_exists( 'bright_autonomy_render_footer_menu' ) ) : ?>
-			<?php bright_autonomy_render_footer_menu( [ 'location' => 'footerMenu', 'show_title' => false ] ); ?>
-		<?php endif; ?>
-
-				<?php if ( function_exists( 'bright_autonomy_render_footer_copyright' ) ) : ?>
-					<?php bright_autonomy_render_footer_copyright(); ?>
-				<?php endif; ?>
-
-	       </div>
-
-			<div class="footer-right">
-
-				<?php if ( function_exists( 'bright_autonomy_render_social_medias' ) ) : ?>
-					<?php bright_autonomy_render_social_medias(); ?>
-				<?php endif; ?>
-
-				<?php if ( function_exists( 'bright_autonomy_render_footer_menu' ) ) : ?>
-					<?php bright_autonomy_render_footer_menu( [ 'location' => 'footerMenu', 'show_title' => false ] ); ?>
-				<?php endif; ?>
-
-			</div>
 		</div>
 
+		<div class="footer-bottom layout-padding">
+
+			<?php if ( function_exists( 'bright_autonomy_render_social_medias' ) ) : ?>
+				<?php bright_autonomy_render_social_medias(); ?>
+			<?php endif; ?>
+
+			<?php if ( function_exists( 'bright_autonomy_render_footer_menu' ) ) : ?>
+				<?php bright_autonomy_render_footer_menu( [ 'location' => 'footerMenu', 'show_title' => false ] ); ?>
+			<?php endif; ?>
+
+		</div>
 	</div>
 
 </footer>
