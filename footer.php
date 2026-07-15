@@ -5,7 +5,7 @@
 
 ?>
 
-<footer id="colophon" class="site-footer mt-50 mt-md-70 mt-lg-100">
+<footer id="colophon" class="site-footer pt-50 pb-50 pt-lg-85 pb-lg-85">
 
 	<div class="mc-container">
 		<div class="footer-inner">
