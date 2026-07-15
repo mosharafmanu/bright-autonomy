@@ -31,7 +31,7 @@
 ?>
 
 <section>
-    <div class="content-intro-section pt-lg-100 pt-50">
+    <div class="content-intro-section">
 
 		<?php if ( ( 'image' === $background_type && $content_image ) || ( 'video' === $background_type && is_array( $content_video ) && $content_video ) ) : ?>
 			<div class="content-intro-media <?php echo esc_attr( $bg_overlay_class ) ; ?>">

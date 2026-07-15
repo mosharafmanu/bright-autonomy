@@ -145,6 +145,9 @@
 
 
 /* Content Intro Style Start */
+.content-intro-section {
+	background-color: #F8F8F8;
+}
 .content-intro-title {
   font-weight: 400;
   line-height: 148.718%;
@@ -224,6 +227,10 @@
   column-gap: 7.4375rem;
 	grid-template-columns: 1fr 1fr;
 }
+.mc-5050-bg .mc5050-content {
+	padding-top: 3.125rem;
+	padding-bottom: 3.125rem;
+}
 .mc5050-eyebrow {
   color: var(--bright-color-dark);
   font-style: normal;
@@ -238,6 +245,7 @@
 	line-height: 111.538%;
 	letter-spacing: -.1235rem;
 	max-width: 39.9375rem;
+  margin: 0;
 }
 .mc5050-body.wysiwyg-content p {
 	margin-top: 1.875rem;
@@ -256,11 +264,10 @@
 }
 .mc5050-media {
 	grid-area: media;
-	height: 36.875rem;
 }
-.mc-5050-bg .mc5050-media  {
+/* .mc-5050-bg .mc5050-media  {
  margin-right: -13rem;
-}
+} */
 .media-content-5050-row.media-right {
     grid-template-areas: "content media";
 }
@@ -515,6 +522,7 @@
   align-items: center;
   grid-template-columns: 100%;
   position: relative;
+  min-height: 26.25rem;
 }
 .contact-cta-content,
 .contact_cta_bg__media {
@@ -538,12 +546,15 @@
   color: var(--bright-color-light);
 }
 .contact-cta-description {
-  margin-top: 1.875rem;
+	margin-top: 1.875rem;
+	max-width: 50rem;
+	margin-left: auto;
+	margin-right: auto;
 }
 .contact_cta_bg__media {
 	height: 26.3125rem;
 }
 .cta-buttons.btns {
-	display: flex;
 	justify-content: center;
+	margin-top: 2.1875rem;
 }
