@@ -44,7 +44,7 @@ Design Tokens
     --bright-font-body:    'Roboto', sans-serif;
 
 	/* Container */
-    --bright-container-max: 94.5rem;       /* 1512px */
+    --bright-container-max: 87rem;       /* 1392px */
     --bright-layout-padding: 1.5rem;       /* 24px — base gutter; bumped at 1200/1600 (see layout-padding) */
 
 

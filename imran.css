@@ -53,6 +53,7 @@
 /* -----------------------------------------------
    How its Work Section Start
 ----------------------------------------------- */
+
 .how-it-works-section-body {
   max-width: 53.75rem;
   margin-left: auto;
@@ -60,11 +61,6 @@
   margin-top: 1.75rem;
 }
 
-.how-it-works-box-inner {
-	display: grid;
-	column-gap: 6.25rem;
-	align-items: center;
-}
 .how-it-works-box {
 	display: flex;
 	flex-direction: column;
@@ -95,6 +91,7 @@
 }
 .how-it-works-content {
 	text-align: center;
+	padding: 0px 4rem;
 }
 .process-step-number-wrapper {
   display: block;
@@ -142,8 +139,22 @@
   z-index: 2;
   font-size: 1rem;
 }
-.how-it-works-title {
-	height: 60px;
+
+@media only screen and (max-width: 1399px) {
+  .how-it-works-content {
+    padding: 0px 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .how-it-works-content {
+    padding: 0px 2rem;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .how-it-works-content {
+    padding: 0px 1rem;
+  }
 }
 
 @media only screen and (max-width: 767px) {

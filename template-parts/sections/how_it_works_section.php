@@ -8,7 +8,7 @@
 
 
     $section_classes = [
-        'how-it-works-section-wrapper mt-50 mt-lg-80',
+        'how-it-works-section-wrapper',
         'mc-container',
         'layout-padding',
         
@@ -24,9 +24,9 @@
 
 ?>
 
-<section class="how-it-works-section" >
+<section class="how-it-works-section pt-50 pb-50 pt-lg-130 pb-lg-100" >
 
-    <div class="">
+
         <div class="how-it-works-section-content text-center <?php echo esc_attr( implode( ' ', $section_classes ) ); ?> ">
 
             <?php if ( $title ) : ?>
@@ -108,6 +108,6 @@
 
             </div>
         </div>
-    </div>
+
 
 </section>
