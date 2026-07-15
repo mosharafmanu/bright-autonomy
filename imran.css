@@ -83,7 +83,7 @@
 .process-step-number::after {
 	position: absolute;
 	content: "";
-	top: -2px;
+	top: -1px;
 	left: 50%;
 	width: 28px;
 	height: 28px;

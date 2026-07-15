@@ -8,7 +8,7 @@
 <footer id="colophon" class="site-footer mt-50 mt-md-70 mt-lg-100">
 
 	<div class="mc-container">
-		<div class="footer-top layout-padding">
+		<div class="footer-left layout-padding">
 
 			<?php if ( function_exists( 'bright_autonomy_render_footer_logo' ) ) : ?>
 				<?php bright_autonomy_render_footer_logo(); ?>
@@ -20,7 +20,7 @@
 
 		</div>
 
-		<div class="footer-bottom layout-padding">
+		<div class="footer-right layout-padding">
 
 			<?php if ( function_exists( 'bright_autonomy_render_social_medias' ) ) : ?>
 				<?php bright_autonomy_render_social_medias(); ?>
