@@ -23,7 +23,7 @@
     }
 
     $section_inner_classes = [
-        'media-content-5050-inner mt-50 mt-lg-80',
+        'media-content-5050-inner pt-50 pb-50 pt-lg-80 pb-lg-80',
         'mc-container',
         'layout-padding',
         

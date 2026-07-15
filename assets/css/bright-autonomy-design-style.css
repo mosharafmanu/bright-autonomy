@@ -999,6 +999,18 @@ h6,.h6-style {
     border-color: #fff;
 }
 
+.btn-light {
+   border-radius: .25rem;
+   border: .125rem solid var(--bright-color-primary);
+   background-color: var(--bright-color-light);
+   font-size: 1rem;
+}
+.btn-light:hover {
+    background-color: var(--bright-color-primary);
+    color: var(--bright-color-light);
+    border-color: var(--bright-color-light);
+}
+
 /* ── Secondary: accent fill, dark text → primary fill on hover */
 .btn-secondary {
     background: var(--bright-color-accent);
