@@ -19,10 +19,8 @@
 
 ?>
 
-<section>
-    <div class="content-intro-section pt-lg-100 pt-50 <?php echo esc_attr( implode( ' ', $section_classes ) ); ?>">
-
-
+<section class="content-intro-section pt-50 pb-50 pt-lg-80 pb-lg-100">
+    <div class="<?php echo esc_attr( implode( ' ', $section_classes ) ); ?>">
         <div class="content-section-content <?php echo esc_attr( $text_align_class ) ; ?>">
 
             <?php if ( $content_title ) : ?>
