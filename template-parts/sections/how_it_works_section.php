@@ -56,8 +56,8 @@
                         <div class="how-it-works-box">
 
                             <?php if ( $image ) : ?>
-                                <div class="how-it-works-media">
-                                    <div class="how-it-works-media-wrapper media">
+                                <div class="how-it-works-media-wrapper">
+                                    <div class="how-it-works-media media">
 
                                         <?php
                                         if ( $image && function_exists( 'bright_autonomy_render_responsive_picture' ) ) {
@@ -78,8 +78,10 @@
                                 </div>
                             <?php endif; ?>
 
-                            <span class="process-step-number">
-                                <?php echo esc_html( $index + 1 ); ?>
+                            <span class="process-step-number-wrapper">
+                                <span class="process-step-number">
+                                    <?php echo esc_html( $index + 1 ); ?>
+                                </span>
                             </span>
 
                             <div class="how-it-works-content" >

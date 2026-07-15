@@ -49,3 +49,102 @@
 ----------------------------------------------- */
 
 
+
+/* -----------------------------------------------
+   How its Work Section Start
+----------------------------------------------- */
+.how-it-works-box {
+  display: flex;
+  flex-direction: column;
+  gap: 110px;
+  position: relative;
+}
+.how-it-works-boxes {
+  position: relative;
+}
+.how-it-works-boxes::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #666666;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.how-it-works-media {
+	height: 228px;
+}
+.how-it-works-content {
+	height: 228px;
+}
+.process-step-number::after {
+	position: absolute;
+	content: "";
+	top: -2px;
+	left: 50%;
+	width: 28px;
+	height: 28px;
+	background: #FFF;
+	transform: translateY(-50%);
+	z-index: -1;
+	border-radius: 100%;
+	border: 2px solid #666666;
+	transform: translateX(-50%);
+}
+.process-step-number-wrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.process-step-number-wrapper::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #666666;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.process-step-number {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.how-it-works-section-body {
+  max-width: 53.75rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.75rem;
+}
+.how-it-works-box-inner {
+	display: grid;
+	column-gap: 6.25rem;
+	align-items: center;
+}
+@media only screen and (max-width: 767px) {
+  .how-it-works-boxes::after {
+    display: none;
+  }
+}
+
+/* -----------------------------------------------
+   How its Work Section End
+----------------------------------------------- */
+
+
+footer {
+  background: var(--bright-color-dark);
+}
