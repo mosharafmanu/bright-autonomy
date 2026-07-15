@@ -4,12 +4,16 @@
     $column_count   = get_sub_field( 'columns' ) ?: '3';                // ACF Button Group Field : Grid Column 2,3,4
     $content_center = get_sub_field( 'text_align_center' );             // ACF True / False Field : Content Align Center
     $feature_items  = get_sub_field( 'feature_content_items' );         // ACF Repeater Field : Feature Items
+    $section_bg     = get_sub_field( 'feature_section_bg' );            // ACF True / False Field : Section Background
 
     $section_classes = [
         'feature-content-section mt-50 mt-lg-85 pt-50 pb-50 pt-lg-70 pb-lg-90',
         'layout-padding',
-        
     ];
+    if ( $section_bg ) {
+        $section_classes[] = 'feature-section-bg';
+    }
+
 
     $classes = [
         'columns-' . $column_count,
