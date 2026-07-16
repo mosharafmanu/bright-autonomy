@@ -587,60 +587,6 @@
 }
 /* Contact Cta Style End */
 
-
-/* Testimonial Style Start */
-.testimonial-section {
-	background-color: #F8F8F8;
-}
-.layout-grid {
-  display: grid;
-  column-gap: 1.875rem;
-  row-gap: 1.875rem;
-}
-.testimonial-boxes {
-  margin-top: 2.5rem;
-}
-.testimonial-boxe {
-  border-radius: .25rem;
-  border: .125rem solid #E2E2E2;
-  background: #FFF;
-  box-shadow: 0 .1875rem .375rem 0 rgba(0, 0, 0, 0.16);
-  padding: 2.0625rem 3.125rem .9375rem 1.875rem;
-}
-.testimonial-body {
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 156.25%;
-  opacity: 0.8;
-}
-.testimonial-client {
-  margin-top: 2.1875rem;
-  border-top: 1px solid #E2E2E2;
-  padding-top: 1.25rem;
-  display: flex;
-  align-items: center;
-  column-gap: 1.125rem;
-}
-.client-name {
-  color: var(--bright-color-dark);
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 118.75%;
-}
-.testimonial-client-info p {
-  color: var(--bright-color-dark);
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 156.25%;
-  opacity: 0.8;
-  max-width: 10.875rem;
-}
-/* Testimonial Style End */
-
-
 /* Contact Form Style Start */
 
 .contact-form-section-info {

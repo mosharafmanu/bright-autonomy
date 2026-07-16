@@ -14,6 +14,10 @@
 
 ?>
 
+<?php if ( empty( $cta_buttons ) ) {
+    return;
+} ?>
+
 <section>
     <div class="contact-cta-section">
 

@@ -138,6 +138,10 @@ function bright_autonomy_scripts() {
 	// Slick JS: registered always, enqueued only where a carousel renders.
 	// scripts.js no longer hard-depends on it (its carousel init self-guards when
 	// $.fn.slick is absent), so scripts.js loads everywhere while Slick is gated.
+	wp_enqueue_style( 'slick-css', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' , array(), null	);
+	
+    wp_enqueue_script( 'slick-js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), null, true );
+	
 	wp_register_script( 'slick-carousel',             get_template_directory_uri() . '/assets/js/slick.js',                       array( 'jquery' ), BRIGHT_AUTONOMY_VERSION, true );
 	if ( $needs_slick ) {
 		wp_enqueue_script( 'slick-carousel' );

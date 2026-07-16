@@ -29,37 +29,47 @@
 <div class="<?php echo esc_attr( implode( ' ', $section_classes ) ); ?>">
 
    <div class="mc-container">
-     <div class="testimonial-section-content text-center">
+        <div class="testimonial-section-content text-center">
 
-        <?php if ( $title ) : ?>
-            <h4 class="h1-style testimonial-section"><?php echo esc_html( $title ); ?></h4>
-        <?php endif; ?>
+            <?php if ( $title ) : ?>
+                <h4 class="h1-style testimonial-section"><?php echo esc_html( $title ); ?></h4>
+            <?php endif; ?>
 
-    </div>
+        </div>
 
-    <div class="testimonial-boxes <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+        <div class="testimonial-boxes-wrapper">
+            <div class="testimonial-boxes <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 
-        <?php 
-            $testimonial            = new WP_Query(array(
-                'post_type'         => 'testimonial',
-            ));
-        
-        ?>
+                <?php 
+                    $testimonial            = new WP_Query(array(
+                        'post_type'         => 'testimonial',
+                    ));
+                
+                ?>
+                
+                <?php if ( $testimonial ) : ?>
+                    <?php if ( $testimonial->have_posts()) : ?>
+                    <?php while ( $testimonial->have_posts()) : $testimonial->the_post(); ?>
 
-        <?php if ( $testimonial ) : ?>
-            <?php if ( $testimonial->have_posts()) : ?>
-            <?php while ( $testimonial->have_posts()) : $testimonial->the_post(); ?>
-
-            <?php
-            if ( function_exists( 'bright_autonomy_render_testimonial_card' ) ) {
-                bright_autonomy_render_testimonial_card();
-            }
-            ?>
+                    <?php
+                    if ( function_exists( 'bright_autonomy_render_testimonial_card' ) ) {
+                        bright_autonomy_render_testimonial_card();
+                    }
+                    ?>
 
 
-        <?php endwhile; endif; endif; ?>
-        <?php wp_reset_postdata(); ?>
-    </div>
+                <?php endwhile; endif; endif; ?>
+                <?php wp_reset_postdata(); ?>
+            </div>
+            <div class="testimonial-navigation">
+                <button class="testimonial-prev">
+                    <?php echo file_get_contents( get_template_directory() . '/assets/svgs/left-arrow.php' ); ?>
+                </button>
+                <button class="testimonial-next">
+                    <?php echo file_get_contents( get_template_directory() . '/assets/svgs/right-arrow.php' ); ?>
+                </button>
+            </div>
+        </div>
    </div>
 
 

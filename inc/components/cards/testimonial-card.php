@@ -34,31 +34,35 @@ if ( ! function_exists( 'bright_autonomy_render_testimonial_card' ) ) {
 		?>
 
 		<div class="<?php echo esc_attr( implode( ' ', array_filter( $card_classes ) ) ); ?>">
-			<div class="testimonial-body">
-				<?php echo wp_kses_post( apply_filters( 'the_content', get_post_field( 'post_content', $post_id ) ) ); ?>
-			</div>
-
-			<div class="testimonial-client">
-				<div class="testimonial-logo-wrap">
-					<?php if ( $icon && function_exists( 'bright_autonomy_render_icon' ) ) : ?>
-						<?php
-						bright_autonomy_render_icon(
-							$icon,
-							[
-								'class' => 'client-logo',
-							]
-						);
-						?>
-					<?php else : ?>
-						<span class="avatar-placeholder">
-							<?php echo esc_html( $first_letter ); ?>
-						</span>
-					<?php endif; ?>
+			<div class="testimonial-wrapper">
+				<div class="testimonial-body">
+					<?php echo wp_kses_post( apply_filters( 'the_content', get_post_field( 'post_content', $post_id ) ) ); ?>
 				</div>
 
-				<div class="testimonial-client-info">
-					<span class="client-name"><?php echo esc_html( $title ); ?></span>
-					<p><?php echo esc_html( $tagline ); ?></p>
+				<div class="testimonial-client">
+					<div class="testimonial-logo-wrap">
+						<div class="testimonial-logo-inner">
+							<?php if ( $icon && function_exists( 'bright_autonomy_render_icon' ) ) : ?>
+								<?php
+								bright_autonomy_render_icon(
+									$icon,
+									[
+										'class' => 'client-logo',
+									]
+								);
+								?>
+							<?php else : ?>
+								<span class="avatar-placeholder">
+									<?php echo esc_html( $first_letter ); ?>
+								</span>
+							<?php endif; ?>
+						</div>
+					</div>
+
+					<div class="testimonial-client-info">
+						<span class="client-name"><?php echo esc_html( $title ); ?></span>
+						<p><?php echo esc_html( $tagline ); ?></p>
+					</div>
 				</div>
 			</div>
 		</div>

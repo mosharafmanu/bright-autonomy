@@ -411,15 +411,61 @@ window.addEventListener('load', () => {
     }
 });
 
+window.addEventListener('load', () => {
+    const boxes = document.querySelectorAll('.how-it-works-box');
+
+    let currentRowTop = null;
+
+    boxes.forEach((box) => {
+        const top = box.offsetTop;
+
+        if (top !== currentRowTop) {
+            currentRowTop = top;
+            box.classList.add('row-start');
+        }
+    });
+});
+
+
+
+
 jQuery(document).ready(function ($) {
 
-$('.layout-carousel"').slick({
-  infinite: true,
-  slidesToShow: 3,
-  slidesToScroll: 3
-});
+    if ($('.layout-carousel').length) {
+
+        $('.layout-carousel').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            dots: false,
+            infinite: true,
+			autoplay: true,
+			arrows: true,
+			prevArrow: $('.testimonial-prev'),
+			nextArrow: $('.testimonial-next'),
+			responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+			
+        });
+
+    }
 
 });
+
+
+
+
 
 	
 

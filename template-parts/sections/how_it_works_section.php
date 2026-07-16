@@ -49,6 +49,9 @@
                         $body           = $card['how_it_works_body'];
 
                         $image          = $card['how_it_works_image'];
+                        if ( empty( $image ) ) {
+                                continue;
+                            }
 
 
                         ?>
