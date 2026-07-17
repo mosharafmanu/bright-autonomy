@@ -418,7 +418,7 @@ window.addEventListener('load', () => {
 
 
 
-
+// Slick Carousel for Testimonial
 jQuery(document).ready(function ($) {
 
     $('.testimonial-boxes-wrapper').each(function () {

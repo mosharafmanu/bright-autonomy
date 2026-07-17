@@ -5,7 +5,7 @@ $body            = get_sub_field( 'form_section_body' );
 $form_short_code = get_sub_field( 'form_embed' );
 
 $section_classes = [
-	'contact-form-section mt-50 mt-lg-80',
+	'contact-form-section mt-50 mt-lg-80 pb-50 pb-lg-80',
 	'mc-container',
 	'layout-padding',
 ];

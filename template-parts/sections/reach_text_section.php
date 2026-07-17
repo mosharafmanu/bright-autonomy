@@ -22,7 +22,7 @@
 
     $body_text = [];
 
-    if ( ! empty( $content_title ) ) {
+    if ( empty( $content_title ) ) {
         $body_text[] = 'font-size-md';
     }
 

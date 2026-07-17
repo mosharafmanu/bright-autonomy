@@ -3,7 +3,7 @@
     $column_count       = get_sub_field( 'column' ) ?: '3';                 // ACF Button Group Field : Column Count 2,3,4
 
     $section_classes = [
-        'highlight-feature-section pt-50 pb-50 pt-lg-80 pb-lg-80',
+        'highlight-feature-section pt-50 pb-50 pt-lg-100 pb-lg-100',
         'layout-padding',
         
     ];
@@ -46,13 +46,17 @@
                     class="highlight-feature-card"
                     style="--card-bg: <?php echo esc_attr( $card_color ); ?>;"
                 >
-                    <?php if ($title): ?>
-                        <h3 class="h5-style highlight-card-title"><?php echo wp_kses($title, ['br' => []]); ?></h3>
-                    <?php endif; ?>
+                    <div class="highlight-feature-content">
 
-                    <?php if ($body): ?>
-                        <p class=" highlight-card-body"><?php echo wp_kses($body, ['br' => []]); ?></p>
-                    <?php endif; ?>
+                        <?php if ($title): ?>
+                            <h3 class="h5-style highlight-card-title"><?php echo wp_kses($title, ['br' => []]); ?></h3>
+                        <?php endif; ?>
+
+                        <?php if ($body): ?>
+                            <p class=" highlight-card-body"><?php echo wp_kses($body, ['br' => []]); ?></p>
+                        <?php endif; ?>
+
+                    </div>
                     
                 </div>
 

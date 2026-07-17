@@ -7,7 +7,7 @@
     $section_bg     = get_sub_field( 'feature_section_bg' );            // ACF True / False Field : Section Background
 
     $section_classes = [
-        'feature-content-section mt-50 mt-lg-85 pt-50 pb-50 pt-lg-70 pb-lg-90',
+        'feature-content-section pt-50 pb-50 pt-lg-70 pb-lg-90',
         'layout-padding',
     ];
     if ( $section_bg ) {

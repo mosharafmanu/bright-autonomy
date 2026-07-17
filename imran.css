@@ -26,21 +26,25 @@
 }
 
 .highlight-feature-card {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .highlight-feature-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
+  content: '';
+  position: absolute;
+  inset: 0;
 
-    background-image: url('http://localhost/ClientProjects/WordPress/2026/bright-autonomy-rebuild/wp-content/uploads/2026/07/Mask-Group-20.png');
-    background-size: cover;
-    background-position: center;
+  background-image: url('http://localhost/ClientProjects/WordPress/2026/bright-autonomy-rebuild/wp-content/uploads/2026/07/Mask-Group-20.png');
+  background-size: cover;
+  background-position: center;
 
-    opacity: 1;
-    mix-blend-mode: screen;
+  opacity: 1;
+  mix-blend-mode: screen;
+}
+.highlight-feature-content {
+	position: relative;
+	z-index: 2;
 }
 
 
@@ -69,14 +73,14 @@
 	align-items: center;
 }
 .how-it-works-box.row-start::before {
-    content: '';
-    position: absolute;
-    top: var(--step-position);
-    left: -100vw;
-    width: 200vw;
-    height: 1px;
-    background: #666;
-    z-index: -1;
+  content: '';
+  position: absolute;
+  top: var(--step-position);
+  left: -100vw;
+  width: 200vw;
+  height: 1px;
+  background: #666;
+  z-index: -1;
 }
 .how-it-works-boxes {
   position: relative;
@@ -190,11 +194,17 @@
   grid-row: 1;
   grid-column: 1;
   position: relative;
+
+}
+.reach-to-text-media {
+  height: 26.25rem;
 }
 .content-intro-inner {
-  grid-row: 1;
-  grid-column: 1;
-  z-index: 2;
+	grid-row: 1;
+	grid-column: 1;
+	z-index: 2;
+	/* padding-top: 2rem;
+	padding-bottom: 2rem; */
 }
 .reach-to-text-media-wrapper::after {
   content: "";
@@ -210,6 +220,15 @@
 .content-intro-section.has-image .content-intro-description {
   color: var(--bright-color-light);
 }
+
+
+@media only screen and (max-width: 767px) {
+  .reach-to-text-media {
+    height: 18.25rem;
+  }
+  
+}
+
 /* -----------------------------------------------
    Reach To Text Section End
 ----------------------------------------------- */

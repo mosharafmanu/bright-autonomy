@@ -21,13 +21,20 @@
     if ( true === $section_bg ) {
         $section_classes[] = 'mc-5050-bg';
     }
+    
 
     $section_inner_classes = [
         'media-content-5050-inner pt-50 pb-50 pt-lg-80 pb-lg-80',
         'mc-container',
         'layout-padding',
-        
     ];
+    if ( true === $media_overflow ) {
+        $section_inner_classes = [
+            'media-content-5050-inner pt-30 pt-lg-45',
+            'mc-container',
+            'layout-padding'
+        ];
+    }
 
     $row_classes = [ 
         'media-content-5050-row', 'media-' . $media_position 
@@ -64,39 +71,41 @@
 
             <!-- Media column -->
             <?php if ( $has_media ) : ?>
-                <div class="mc5050-media media">
+                <div class="mc5050-media-wrapper">
+                    <div class="mc5050-media media">
 
-                    <?php if ( $has_video && function_exists( 'bright_autonomy_render_video' ) ) : ?>
-                        <?php
-                        $video_behavior = ! empty( $video['video_behavior'] ) ? $video['video_behavior'] : 'autoplay';
-                        bright_autonomy_render_video(
-                            $video,
-                            [
-                                'behavior'           => $video_behavior,
-                                'autoplay'           => true,
-                                'autoplay_on_scroll' => ! empty( $video['autoplay_on_scroll'] ),
-                                'muted'              => true,
-                                'loop'               => true,
-                                'controls'           => ! empty( $video['controls_visibility'] ),
-                                'class'              => 'mc5050-video',
-                                'container_class'    => 'mc5050-video-container',
-                            ]
-                        );
-                        ?>
+                        <?php if ( $has_video && function_exists( 'bright_autonomy_render_video' ) ) : ?>
+                            <?php
+                            $video_behavior = ! empty( $video['video_behavior'] ) ? $video['video_behavior'] : 'autoplay';
+                            bright_autonomy_render_video(
+                                $video,
+                                [
+                                    'behavior'           => $video_behavior,
+                                    'autoplay'           => true,
+                                    'autoplay_on_scroll' => ! empty( $video['autoplay_on_scroll'] ),
+                                    'muted'              => true,
+                                    'loop'               => true,
+                                    'controls'           => ! empty( $video['controls_visibility'] ),
+                                    'class'              => 'mc5050-video',
+                                    'container_class'    => 'mc5050-video-container',
+                                ]
+                            );
+                            ?>
 
-                    <?php elseif ( $has_image && function_exists( 'bright_autonomy_render_responsive_picture' ) ) : ?>
-                        <?php
-                        bright_autonomy_render_responsive_picture(
-                            $image,
-                            [
-                                'class' => 'mc5050-img',
-                                'lazy'  => true,
-                                'sizes' => '(max-width: 767px) 100vw, 50vw',
-                            ]
-                        );
-                        ?>
-                    <?php endif; ?>
+                        <?php elseif ( $has_image && function_exists( 'bright_autonomy_render_responsive_picture' ) ) : ?>
+                            <?php
+                            bright_autonomy_render_responsive_picture(
+                                $image,
+                                [
+                                    'class' => 'mc5050-img',
+                                    'lazy'  => true,
+                                    'sizes' => '(max-width: 767px) 100vw, 50vw',
+                                ]
+                            );
+                            ?>
+                        <?php endif; ?>
 
+                    </div>
                 </div>
             <?php endif; ?>
 
