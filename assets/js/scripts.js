@@ -98,7 +98,7 @@
 
 		// Close when resizing back to desktop
 		$( window ).on( 'resize', function () {
-			if ( isMenuOpen() && $( window ).width() > 1199 ) {
+			if ( isMenuOpen() && $( window ).width() >= 992 ) {
 				closeMenu();
 			}
 		} );
@@ -130,35 +130,47 @@
 
 		// ─────────────────────────────────────────────────────────────
 		// MOBILE SUBMENU TOGGLES
-		// Injects a chevron button next to each parent link and
-		// handles expand / collapse with aria state.
+		// Reuses the submenu indicator already rendered inside parent links
+		// and handles expand / collapse with aria state.
 		// ─────────────────────────────────────────────────────────────
-
-		const chevronSVG = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
 		$( '.mobile-menu li.menu-item-has-children' ).each( function () {
 			const $li      = $( this );
 			const $submenu = $li.children( '.sub-menu' ).hide();
-			const $btn     = $( '<button>', {
-				class:           'submenu-toggle',
-				'aria-expanded': 'false',
-				'aria-label':    'Expand submenu',
-				html:            chevronSVG,
-			} );
+			const $link    = $li.children( 'a' );
+			const $toggle  = $link.children( '.submenu-indicator' );
 
-			$li.children( 'a' ).after( $btn );
+			$toggle
+				.attr( {
+					'aria-hidden':   'false',
+					'aria-expanded': 'false',
+					'aria-label':    'Toggle submenu',
+					role:            'button',
+					tabindex:        '0',
+				} );
 
-			$btn.on( 'click', function () {
-				const isExpanded = $btn.attr( 'aria-expanded' ) === 'true';
+			function toggleSubmenu( e ) {
+				e.preventDefault();
+				e.stopPropagation();
+
+				const isExpanded = $toggle.attr( 'aria-expanded' ) === 'true';
 
 				// Close all other open submenus
 				$( '.mobile-menu li.menu-item-has-children' ).not( $li ).each( function () {
 					$( this ).children( '.sub-menu' ).slideUp( 300 );
-					$( this ).find( '.submenu-toggle' ).attr( 'aria-expanded', 'false' );
+					$( this ).removeClass( 'is-open' ).children( 'a' ).children( '.submenu-indicator' ).attr( 'aria-expanded', 'false' );
 				} );
 
-				$btn.attr( 'aria-expanded', String( ! isExpanded ) );
+				$li.toggleClass( 'is-open', ! isExpanded );
+				$toggle.attr( 'aria-expanded', String( ! isExpanded ) );
 				$submenu.slideToggle( 300 );
+			}
+
+			$toggle.on( 'click', toggleSubmenu );
+			$toggle.on( 'keydown', function ( e ) {
+				if ( e.key === 'Enter' || e.key === ' ' ) {
+					toggleSubmenu( e );
+				}
 			} );
 		} );
 
@@ -195,28 +207,6 @@
 				$( this ).closest( '.sub-menu' ).siblings( 'a' ).trigger( 'focus' );
 			}
 		} );
-
-
-		// ─────────────────────────────────────────────────────────────
-		// BACK TO TOP
-		// Shows after 400px scroll; hides when back at top.
-		// ─────────────────────────────────────────────────────────────
-
-		const $backToTop = $( '.back-to-top' );
-
-		if ( $backToTop.length ) {
-			$( window ).on( 'scroll.backToTop', function () {
-				const visible = $( this ).scrollTop() > 400;
-				$backToTop
-					.toggleClass( 'is-visible', visible )
-					.attr( 'aria-hidden', String( ! visible ) );
-			} );
-
-			$backToTop.on( 'click', function () {
-				$( 'html, body' ).animate( { scrollTop: 0 }, 500, 'swing' );
-				$( this ).trigger( 'blur' );
-			} );
-		}
 
 
 		// ─────────────────────────────────────────────────────────────
@@ -431,17 +421,23 @@ window.addEventListener('load', () => {
 
 jQuery(document).ready(function ($) {
 
-    if ($('.layout-carousel').length) {
+    $('.testimonial-boxes-wrapper').each(function () {
+        const $wrapper = $(this);
+        const $carousel = $wrapper.find('.layout-carousel');
 
-        $('.layout-carousel').slick({
+        if (!$carousel.length || typeof $.fn.slick !== 'function') {
+            return;
+        }
+
+        $carousel.slick({
             slidesToShow: 3,
             slidesToScroll: 1,
             dots: false,
             infinite: true,
 			autoplay: true,
 			arrows: true,
-			prevArrow: $('.testimonial-prev'),
-			nextArrow: $('.testimonial-next'),
+			prevArrow: $wrapper.find('.testimonial-prev'),
+			nextArrow: $wrapper.find('.testimonial-next'),
 			responsive: [
             {
                 breakpoint: 1024,
@@ -456,16 +452,302 @@ jQuery(document).ready(function ($) {
                 }
             }
         ]
-			
+				
         });
 
-    }
+    });
 
 });
 
 
+// Reserve My Place in Line form.
+jQuery(document).ready(function ($) {
+	const $form = $('#form-reserve');
 
+	if (!$form.length) {
+		return;
+	}
+
+	const $submit = $form.find('.reserve-submit');
+	const ajaxUrl = $form.data('ajax-url');
+
+	function setStep(step) {
+		$form.find('.reserve-step').removeClass('is-active');
+		$form.find('.reserve-step-' + step).addClass('is-active');
+	}
+
+	function setFieldError($field, message) {
+		$field.addClass('has-error');
+		$field.find('.reserve-error').first().text(message);
+	}
+
+	function clearFieldError($field) {
+		$field.removeClass('has-error');
+		$field.find('.reserve-error').first().text('');
+	}
+
+	function validateEmail(email) {
+		return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+	}
+
+	function validateRequiredField(name, message) {
+		const $input = $form.find('[name="' + name + '"]').first();
+		const $field = $input.closest('.reserve-field');
+		const value = $.trim($input.val());
+
+		if (!value) {
+			setFieldError($field, message);
+			return false;
+		}
+
+		clearFieldError($field);
+		return true;
+	}
+
+	function validateStepOne() {
+		let valid = true;
+		const $email = $form.find('[name="email"]');
+		const $emailField = $email.closest('.reserve-field');
+		const email = $.trim($email.val());
+
+		if (!email) {
+			setFieldError($emailField, 'Email Required');
+			valid = false;
+		} else if (!validateEmail(email)) {
+			setFieldError($emailField, 'Email Invalid');
+			valid = false;
+		} else {
+			clearFieldError($emailField);
+		}
+
+		valid = validateRequiredField('fname', 'First Name Required') && valid;
+		valid = validateRequiredField('lname', 'Last Name Required') && valid;
+		valid = validateRequiredField('pos', 'Position Required') && valid;
+		valid = validateRequiredField('golf', 'Golf Course Name Required') && valid;
+		valid = validateRequiredField('address', 'Golf Course Address Required') && valid;
+		valid = validateRequiredField('phone', 'Phone Required') && valid;
+
+		return valid;
+	}
+
+	function validateFleetFields() {
+		let valid = true;
+		const fieldMessages = {
+			'make[]': 'Make Required',
+			'model[]': 'Model Required',
+			'type[]': 'Machine Type Required',
+			'year[]': 'Year Required',
+		};
+
+		$.each(fieldMessages, function (name, message) {
+			$form.find('[name="' + name + '"]').each(function () {
+				const $input = $(this);
+				const $field = $input.closest('.reserve-field');
+
+				if (!$.trim($input.val())) {
+					setFieldError($field, message);
+					valid = false;
+				} else {
+					clearFieldError($field);
+				}
+			});
+		});
+
+		return valid;
+	}
+
+	function updateSubmitState() {
+		$submit.prop('disabled', !$form.find('[name="chk-terms-condition"]').is(':checked'));
+	}
+
+	function setButtonBusy($button, busy, label) {
+		if (!$button.length) {
+			return;
+		}
+
+		if (busy) {
+			$button.data('original-text', $button.text()).text(label).prop('disabled', true);
+			return;
+		}
+
+		$button.text($button.data('original-text') || $button.text()).prop('disabled', false);
+	}
+
+	function getStepOnePayload(action) {
+		return {
+			action: action,
+			registered: $form.find('[name="registered"]').val(),
+			nonce: $form.find('[name="nonce_field"]').val(),
+			email: $form.find('[name="email"]').val(),
+			fname: $form.find('[name="fname"]').val(),
+			lname: $form.find('[name="lname"]').val(),
+			pos: $form.find('[name="pos"]').val(),
+			golf: $form.find('[name="golf"]').val(),
+			address: $form.find('[name="address"]').val(),
+			phone: $form.find('[name="phone"]').val(),
+		};
+	}
+
+	function buildShareLink() {
+		const email = encodeURIComponent($form.find('[name="email"]').val());
+		const baseUrl = window.location.href.split('?')[0];
+
+		return baseUrl + '?email=' + email;
+	}
+
+	function buildFleetGroup() {
+		return [
+			'<div class="reserve-fleet-group">',
+				'<div class="reserve-field" data-field="make[]">',
+					'<label>Make<span>*</span></label>',
+					'<input type="text" name="make[]" placeholder="John Deer" />',
+					'<span class="reserve-error"></span>',
+				'</div>',
+				'<div class="reserve-field" data-field="model[]">',
+					'<label>Model<span>*</span></label>',
+					'<input type="text" name="model[]" placeholder="6080A PrecisionCut\\u2122" />',
+					'<span class="reserve-error"></span>',
+				'</div>',
+				'<div class="reserve-field" data-field="type[]">',
+					'<label>Machine Type<span>*</span></label>',
+					'<select name="type[]">',
+						'<option value="">Select Machine Type</option>',
+						'<option value="Ball Picker">Ball Picker</option>',
+						'<option value="Fairway Mower">Fairway Mower</option>',
+						'<option value="Green Mower">Green Mower</option>',
+						'<option value="Roller">Roller</option>',
+					'</select>',
+					'<span class="reserve-error"></span>',
+				'</div>',
+				'<div class="reserve-field" data-field="year[]">',
+					'<label>Year of manufacturing<span>*</span></label>',
+					'<input type="text" name="year[]" placeholder="2000" />',
+					'<span class="reserve-error"></span>',
+				'</div>',
+			'</div>',
+		].join('');
+	}
+
+	$form.on('keydown', function (event) {
+		if (event.key === 'Enter') {
+			event.preventDefault();
+		}
+	});
+
+	$form.on('click', '.reserve-next', function () {
+		if (validateStepOne()) {
+			setStep(2);
+		}
+	});
+
+	$form.on('click', '.reserve-save-user', function () {
+		const $button = $(this);
+		const $status = $form.find('.reserve-save-status');
+
+		$status.removeClass('is-error').text('');
+
+		if (!validateStepOne()) {
+			return;
+		}
+
+		setButtonBusy($button, true, 'Saving...');
+		$status.text('Saving...');
+
+		$.ajax({
+			url: ajaxUrl,
+			type: 'POST',
+			dataType: 'json',
+			data: getStepOnePayload('save_user_submition'),
+			success: function (response) {
+				if (response && response.status === 'success') {
+					$form.find('[name="registered"]').val('1');
+					$status.html('<p>Link to share.</p><p><a href="' + buildShareLink() + '">' + buildShareLink() + '</a></p>');
+					return;
+				}
+
+				$status.addClass('is-error').html(((response && response.message) ? response.message : 'Something went wrong. Please try again.') + '<p><a href="' + buildShareLink() + '">' + buildShareLink() + '</a></p>');
+			},
+			error: function () {
+				$status.addClass('is-error').text('Something went wrong. Please try again.');
+			},
+			complete: function () {
+				setButtonBusy($button, false);
+			},
+		});
+	});
+
+	$form.on('click', '.reserve-add-fleet', function () {
+		$form.find('.reserve-fleet-wrapper').append(buildFleetGroup());
+	});
+
+	$form.on('change', '[name="chk-terms-condition"]', updateSubmitState);
+	updateSubmitState();
+
+	$form.on('submit', function (event) {
+		event.preventDefault();
+
+		const $status = $form.find('.reserve-status');
+
+		$status.removeClass('is-error').text('');
+
+		if (!validateFleetFields()) {
+			return;
+		}
+
+		$submit.prop('disabled', true);
+		$status.text('Submitting...');
+
+		$.ajax({
+			url: ajaxUrl,
+			type: 'POST',
+			dataType: 'json',
+			data: {
+				...getStepOnePayload('form_reserve_submition'),
+				makes: $form.find('[name="make[]"]').serialize(),
+				models: $form.find('[name="model[]"]').serialize(),
+				types: $form.find('[name="type[]"]').serialize(),
+				years: $form.find('[name="year[]"]').serialize(),
+			},
+			success: function (response) {
+				if (response && response.status === 'success') {
+					setStep(3);
+					$('.reserve-hero-title').text('Success!');
+					$form[0].reset();
+					updateSubmitState();
+					return;
+				}
+
+				$status.addClass('is-error').text((response && response.message) ? response.message : 'Something went wrong. Please try again.');
+			},
+			error: function () {
+				$status.addClass('is-error').text('Something went wrong. Please try again.');
+			},
+			complete: function () {
+				updateSubmitState();
+			},
+		});
+	});
+
+	$('.reserve-terms-link').on('click', function (event) {
+		event.preventDefault();
+		$('.reserve-modal').addClass('is-open').attr('aria-hidden', 'false');
+		$('body').addClass('reserve-modal-open');
+	});
+
+	$('[data-reserve-modal-close]').on('click', function () {
+		$('.reserve-modal').removeClass('is-open').attr('aria-hidden', 'true');
+		$('body').removeClass('reserve-modal-open');
+	});
+
+	$(document).on('keydown', function (event) {
+		if (event.key === 'Escape') {
+			$('.reserve-modal').removeClass('is-open').attr('aria-hidden', 'true');
+			$('body').removeClass('reserve-modal-open');
+		}
+	});
+});
 
 
 	
 
+	

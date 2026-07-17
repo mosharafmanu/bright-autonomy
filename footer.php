@@ -41,10 +41,6 @@
 
 <?php bright_autonomy_render_mobile_navigation(); ?>
 
-<button class="back-to-top" aria-label="<?php esc_attr_e( 'Back to top', 'bright-autonomy' ); ?>" aria-hidden="true">
-	<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
-</button>
-
 <?php wp_footer(); ?>
 
 </body>

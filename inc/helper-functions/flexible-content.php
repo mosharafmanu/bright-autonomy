@@ -196,6 +196,36 @@ if ( ! function_exists( 'bright_autonomy_page_needs_contact_form' ) ) {
 			$needs = true;
 		}
 
+		if ( ! $needs && $queried instanceof WP_Post && function_exists( 'get_fields' ) ) {
+			$fields = get_fields( $queried->ID );
+			$needs  = bright_autonomy_value_contains_shortcode( $fields, 'contact-form-7' );
+		}
+
 		return (bool) apply_filters( 'bright_autonomy_page_needs_contact_form', $needs );
+	}
+}
+
+if ( ! function_exists( 'bright_autonomy_value_contains_shortcode' ) ) {
+	/**
+	 * Recursively scan nested ACF field values for a shortcode.
+	 *
+	 * @param mixed  $value Field value.
+	 * @param string $tag   Shortcode tag.
+	 * @return bool
+	 */
+	function bright_autonomy_value_contains_shortcode( $value, $tag ) {
+		if ( is_string( $value ) ) {
+			return has_shortcode( $value, $tag );
+		}
+
+		if ( is_array( $value ) ) {
+			foreach ( $value as $item ) {
+				if ( bright_autonomy_value_contains_shortcode( $item, $tag ) ) {
+					return true;
+				}
+			}
+		}
+
+		return false;
 	}
 }
