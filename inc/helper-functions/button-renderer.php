@@ -35,12 +35,14 @@ if ( ! function_exists( 'bright_autonomy_render_button' ) ) {
 		<a href="<?php echo esc_url( $link_url ); ?>"
 			class="<?php echo esc_attr( $button_classes ); ?>"
 			target="<?php echo esc_attr( $link_target ); ?>">
-			<span class="btn-text"><?php echo esc_html( $link_title ); ?></span>
+			
 			<?php if ( $args['show_icon'] ) : ?>
 				<span class="btn-icon">
-					<?php get_template_part( 'assets/svgs/double-angle-right' ); ?>
+					<?php get_template_part( 'assets/svgs/star-icon' ); ?>
 				</span>
 			<?php endif; ?>
+			
+			<span class="btn-text"><?php echo esc_html( $link_title ); ?></span>
 		</a>
 		<?php
 		$output = ob_get_clean();

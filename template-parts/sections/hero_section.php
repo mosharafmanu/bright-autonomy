@@ -8,6 +8,7 @@
 $hero_title       = get_sub_field( 'hero_title' );
 $hero_description = get_sub_field( 'hero_description' );
 $hero_buttons     = get_sub_field( 'hero_buttons' );
+$button_icon      = get_sub_field( 'show-button-icon' );
 $hero_layout      = get_sub_field( 'hero_layout' ) ?: 'default';
 $media_type       = get_sub_field( 'media_type' ) ?: 'image';
 $hero_image       = get_sub_field( 'hero_image' );
@@ -52,6 +53,18 @@ if ( 'video' === $media_type && is_array( $hero_video ) && ! empty( $hero_video 
 } elseif ( $hero_image ) {
 	$section_classes[] = 'has-image';
 }
+
+$button_classes = [
+    'hero-buttons',
+    'btns',
+];
+
+if ( $button_icon ) {
+    $button_classes[] = 'has-icon';
+}
+
+
+
 ?>
 
 <section>
@@ -73,7 +86,7 @@ if ( 'video' === $media_type && is_array( $hero_video ) && ! empty( $hero_video 
 					[
 						'wrapper_class' => 'hero-buttons btns',
 						'default_style' => 'btn-primary',
-						'show_icon'     => false,
+						'show_icon'     => $button_icon,
 					]
 				);
 			}

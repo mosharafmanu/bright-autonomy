@@ -271,6 +271,27 @@
                             ]
                         },
                         {
+                            "key": "field_6a5a40e59944b",
+                            "label": "Button Icon",
+                            "name": "show-button-icon",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "allow_in_bindings": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "ui": 1
+                        },
+                        {
                             "key": "field_6a4e3f2196e16",
                             "label": "Media",
                             "name": "",
@@ -4328,5 +4349,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1784296860
+    "modified": 1784300120
 }
