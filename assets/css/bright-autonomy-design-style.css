@@ -972,11 +972,11 @@ h6,.h6-style {
 }
 
 .btn-text {
-  display: flex;
-  align-items: center;
-  padding-top: .3125rem;
-  margin-left: -2.25rem;
-  transition: margin-left 0.3s ease;
+	display: flex;
+	align-items: center;
+	padding-top: .3125rem;
+	margin-left: -2.25rem;
+	transition: margin-left 0.3s ease;
 }
 .site-btn:hover .btn-icon {
 	opacity: 1;
@@ -992,7 +992,6 @@ h6,.h6-style {
 }
 .site-btn.btn-primary {
   padding: .875rem 2.8125rem;
-  gap: 1rem;
 }
 
 .btns {
@@ -1006,7 +1005,7 @@ h6,.h6-style {
 .site-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1.25rem;
     padding: var(--bright-btn-padding-y) var(--bright-btn-padding-x);
     font-size: var(--bright-btn-font-size);
     line-height: normal;
