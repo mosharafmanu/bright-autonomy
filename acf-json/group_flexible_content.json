@@ -271,6 +271,51 @@
                             ]
                         },
                         {
+                            "key": "field_6a5a40e59944b",
+                            "label": "Button Icon",
+                            "name": "show-button-icon",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "allow_in_bindings": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "ui": 1
+                        },
+                        {
+                            "key": "field_hero_layout",
+                            "label": "Hero Layout",
+                            "name": "hero_layout",
+                            "aria-label": "",
+                            "type": "button_group",
+                            "instructions": "Choose the default full-height hero or the shorter centered variant used by the About page.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "default": "Default",
+                                "short_centered": "Short Centered"
+                            },
+                            "default_value": "default",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "allow_in_bindings": 0,
+                            "layout": "horizontal"
+                        },
+                        {
                             "key": "field_6a4e3f2196e16",
                             "label": "Media",
                             "name": "",
@@ -4328,5 +4373,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1784296860
+    "modified": 1784306785
 }

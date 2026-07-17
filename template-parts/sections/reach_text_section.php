@@ -22,6 +22,9 @@
 
     $body_text = [];
 
+    if ( ! empty( $content_title ) ) {
+        $body_text[] = 'content-intro-width';
+    }
     if ( empty( $content_title ) ) {
         $body_text[] = 'font-size-md';
     }
@@ -66,14 +69,14 @@
     <?php endif; ?>
 
     <div class="<?php echo esc_attr( implode( ' ', $section_classes ) ); ?>">
-        <div class="content-section-content <?php echo esc_attr( $text_align_class ) ; ?>">
+        <div class="content-section-content <?php echo esc_attr( implode( ' ', $body_text ) ); ?> <?php echo esc_attr( $text_align_class ) ; ?>">
 
             <?php if ( $content_title ) : ?>
                 <h2 class="h3-style content-intro-title"><?php echo esc_html( $content_title ) ; ?></h2>
             <?php endif; ?>
 
             <?php if ( $content_description ) : ?>
-                <p class=" content-intro-description <?php echo esc_attr( implode( ' ', $body_text ) ); ?> "><?php echo esc_html( $content_description ) ; ?></p>
+                <p class=" content-intro-description "><?php echo esc_html( $content_description ) ; ?></p>
             <?php endif; ?>
 
             <?php
