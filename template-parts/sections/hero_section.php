@@ -8,6 +8,7 @@
 $hero_title       = get_sub_field( 'hero_title' );
 $hero_description = get_sub_field( 'hero_description' );
 $hero_buttons     = get_sub_field( 'hero_buttons' );
+$hero_layout      = get_sub_field( 'hero_layout' ) ?: 'default';
 $media_type       = get_sub_field( 'media_type' ) ?: 'image';
 $hero_image       = get_sub_field( 'hero_image' );
 $hero_video       = get_sub_field( 'hero_video' );
@@ -37,6 +38,15 @@ $section_classes = [
 	'layout-padding',
 ];
 
+$inner_classes = [
+	'hero-section-inner',
+];
+
+if ( 'short_centered' === $hero_layout ) {
+	$section_classes[] = 'hero-section--short-centered';
+	$inner_classes[]   = 'hero-section-inner--short-centered';
+}
+
 if ( 'video' === $media_type && is_array( $hero_video ) && ! empty( $hero_video ) ) {
 	$section_classes[] = 'has-video';
 } elseif ( $hero_image ) {
@@ -45,7 +55,7 @@ if ( 'video' === $media_type && is_array( $hero_video ) && ! empty( $hero_video 
 ?>
 
 <section>
-	<div class="hero-section-inner">
+	<div class="<?php echo esc_attr( implode( ' ', $inner_classes ) ); ?>">
 		<div class="hero-content <?php echo esc_attr( implode( ' ', $section_classes ) ); ?>">
 
 			<?php if ( $hero_title ) : ?>
