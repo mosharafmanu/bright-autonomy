@@ -64,5 +64,4 @@ $map_allowed_html = [
 
 	</div>
 
-
 </section>

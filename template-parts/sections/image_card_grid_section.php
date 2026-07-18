@@ -70,7 +70,9 @@
                         <div class="image-card-grid-content" >
                             
                             <?php if ($badge_title): ?>
-                                <span class="highlight-badge-title <?php echo esc_attr( implode( ' ', $highlight_badge ) ); ?> "><?php echo wp_kses($badge_title, ['br' => []]); ?></span>
+                                <div class="badge-title-wrapper">
+                                    <span class="highlight-badge-title <?php echo esc_attr( implode( ' ', $highlight_badge ) ); ?> "><?php echo wp_kses($badge_title, ['br' => []]); ?></span>
+                                </div>
                             <?php endif; ?>
 
                              <div class="image-card-content">

@@ -187,21 +187,19 @@ h6,.h6-style {
 	font-family: var(--bright-font-heading);
 	margin-top: 0;
 	margin-bottom: 0.9375rem; /* 15px */
-	font-weight: 700;
+	font-weight: 400;
 	line-height: 1.14;
 	letter-spacing: -0.02em;
 }
 h1,
 .h1-style {
 	font-size: 3.25rem; /* 52px */
-	font-weight: 800;
 	line-height: 1.08;
 	letter-spacing: -0.035em;
 }
 h2,
 .h2-style {
 	font-size: 3rem; /* 48px */
-	font-weight: 700;
 	line-height: 1.12;
 }
 h3,
@@ -990,11 +988,10 @@ h6,.h6-style {
 .btn-text {
   display: flex;
   align-items: center;
-  padding-top: .3125rem;
   transition: margin-left 0.3s ease;
 }
 .site-btn.has-icon .btn-text {
-  margin-left: -2.25rem;
+  margin-left: -2.125rem; /* -34px */
 }
 .site-btn.has-icon:hover .btn-icon {
 	opacity: 1;
@@ -1008,10 +1005,6 @@ h6,.h6-style {
 .site-btn.btn-primary .btn-icon svg path {
 	fill: var(--bright-color-dark);
 }
-.site-btn.btn-primary {
-  padding: .875rem 2.8125rem;
-  gap: 1rem;
-}
 
 .btns {
     display: flex;
@@ -1024,7 +1017,7 @@ h6,.h6-style {
 .site-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
     padding: var(--bright-btn-padding-y) var(--bright-btn-padding-x);
     font-size: var(--bright-btn-font-size);
     line-height: normal;

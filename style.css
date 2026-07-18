@@ -49,10 +49,11 @@ Design Tokens
 
 
 	/* Buttons */
-    --bright-btn-padding-y:   0.9375rem;  /* 15px */
-    --bright-btn-padding-x:   1.5625rem;  /* 25px */
+    --bright-btn-padding-y:   1rem;  /* 20px */
+    --bright-btn-padding-x:   2.8125rem;  /* 25px */
     --bright-btn-font-size:   1.125rem;   /* 18px */
     --bright-btn-font-weight: 700;
+    
 
 	/* Border Radius */
     --bright-border-radius:    0.625rem;   /* 10px */
@@ -61,6 +62,9 @@ Design Tokens
 
 	/* Transition */
     --bright-transition: 0.3s ease;
+
+    /* Header Height
+    --header-height: 6rem; */
 
 
     /*

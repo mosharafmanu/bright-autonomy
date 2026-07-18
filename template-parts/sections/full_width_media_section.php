@@ -31,18 +31,18 @@
 ?>
 
 <section>
-    <div class="content-intro-section">
+    <div class="full-width-media-section">
 
 		<?php if ( ( 'image' === $background_type && $content_image ) || ( 'video' === $background_type && is_array( $content_video ) && $content_video ) ) : ?>
-			<div class="content-intro-media <?php echo esc_attr( $bg_overlay_class ) ; ?>">
-				<div class="content-intro-media-wrapper media">
+			<div class="full-width-media-media <?php echo esc_attr( $bg_overlay_class ) ; ?>">
+				<div class="full-width-media-media-wrapper media">
 
 					<?php
 					if ( 'image' === $background_type && $content_image && function_exists( 'bright_autonomy_render_responsive_picture' ) ) {
 						bright_autonomy_render_responsive_picture(
 							$content_image,
 							[
-								'class'         => 'content-intro-image',
+								'class'         => 'full-width-media-image',
 								'sizes'         => '(max-width: 991px) 100vw, 50vw',
 								'lazy'          => false,
 								'fetchpriority' => 'high',
@@ -67,8 +67,8 @@
 								'controls'           => 'autoplay' === $video_behavior && ! empty( $content_video['video_controls'] ),
 								'popup_autoplay'     => $video_popup_autoplay,
 								'popup_controls'     => $video_popup_controls,
-								'class'              => 'content-intro-video',
-								'container_class'    => 'content-intro-video-wrapper',
+								'class'              => 'full-width-media-video',
+								'container_class'    => 'full-width-media-video-wrapper',
 							]
 						);
 					}
@@ -79,14 +79,14 @@
 		<?php endif; ?>
 
 		<?php if ( $show_content) : ?>
-        <div class="content-section-content <?php echo esc_attr( implode( ' ', $section_classes ) ); ?>">
+        <div class="full-width-media-content <?php echo esc_attr( implode( ' ', $section_classes ) ); ?>">
 
             <?php if ( $content_title ) : ?>
-                <h2 class="h3-style content-intro-title"><?php echo esc_html( $content_title ) ; ?></h2>
+                <h2 class="h3-style full-width-media-title"><?php echo esc_html( $content_title ) ; ?></h2>
             <?php endif; ?>
 
             <?php if ( $content_description ) : ?>
-                <p class=" content-intro-description "><?php echo esc_html( $content_description ) ; ?></p>
+                <p class=" full-width-media-description "><?php echo esc_html( $content_description ) ; ?></p>
             <?php endif; ?>
 
             <?php
@@ -94,7 +94,7 @@
 				bright_autonomy_render_buttons(
 					$content_buttons,
 					[
-						'wrapper_class' => 'content-intro-buttons btns',
+						'wrapper_class' => 'full-width-media-buttons btns',
 						'default_style' => 'btn-primary',
 					]
 				);
