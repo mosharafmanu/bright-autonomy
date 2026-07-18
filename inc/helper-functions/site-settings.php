@@ -15,6 +15,22 @@ if ( ! function_exists( 'bright_autonomy_get_header_button' ) ) {
 	}
 }
 
+if ( ! function_exists( 'bright_autonomy_get_header_button_icon_args' ) ) {
+	function bright_autonomy_get_header_button_icon_args() {
+		if ( ! function_exists( 'get_field' ) ) {
+			return [
+				'show_icon' => false,
+				'icon'      => 'star',
+			];
+		}
+
+		return [
+			'show_icon' => (bool) get_field( 'header_button_show_icon', 'options' ),
+			'icon'      => get_field( 'header_button_icon', 'options' ) ?: 'star',
+		];
+	}
+}
+
 if ( ! function_exists( 'bright_autonomy_render_header_button' ) ) {
 	function bright_autonomy_render_header_button( $args = [] ) {
 		$button = bright_autonomy_get_header_button();
@@ -24,27 +40,15 @@ if ( ! function_exists( 'bright_autonomy_render_header_button' ) ) {
 		}
 
 		$defaults = [
-			'class' => 'site-btn btn-primary',
+			'style' => 'btn-primary',
+			'class' => '',
 			'echo'  => true,
 		];
 		$args = wp_parse_args( $args, $defaults );
+		$args = wp_parse_args( $args, bright_autonomy_get_header_button_icon_args() );
 
-		$url    = $button['url'] ?? '#';
-		$title  = $button['title'] ?? 'Get Started';
-		$target = $button['target'] ?? '';
-
-		ob_start();
-		?>
-		<a href="<?php echo esc_url( $url ); ?>" class="<?php echo esc_attr( $args['class'] ); ?>"<?php echo $target ? ' target="' . esc_attr( $target ) . '" rel="noopener noreferrer"' : ''; ?>>
-			<?php echo esc_html( $title ); ?>
-		</a>
-		<?php
-		$output = ob_get_clean();
-
-		if ( $args['echo'] ) {
-			echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		} else {
-			return $output;
+		if ( function_exists( 'bright_autonomy_render_button' ) ) {
+			return bright_autonomy_render_button( $button, $args );
 		}
 	}
 }

@@ -4,7 +4,7 @@
  */
 
 if ( ! defined( 'BRIGHT_AUTONOMY_VERSION' ) ) {
-	define( 'BRIGHT_AUTONOMY_VERSION', '1.0.43' );
+	define( 'BRIGHT_AUTONOMY_VERSION', '1.0.44' );
 }
 
 
@@ -107,7 +107,7 @@ function bright_autonomy_scripts() {
 	// ── Fonts ────────────────────────────────────────────────────
 	wp_enqueue_style(
 		'bright-autonomy-fonts',
-		'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap',
+		'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap',
 		array(),
 		null,
 		'all'

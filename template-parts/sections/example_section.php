@@ -6,6 +6,8 @@
 $title            = get_sub_field( 'title' );
 $description      = get_sub_field( 'description' );
 $button_link      = get_sub_field( 'button_link' );
+$button_show_icon = get_sub_field( 'button_show_icon' );
+$button_icon      = get_sub_field( 'button_icon' );
 $image            = get_sub_field( 'image' );
 $background_color = get_sub_field( 'background_color' ) ?: 'light';
 
@@ -45,12 +47,13 @@ if ( $image ) {
 			if ( $button_link && function_exists( 'bright_autonomy_render_button' ) ) {
 				bright_autonomy_render_button(
 					$button_link,
-					[
-						'style' => 'primary',
-						'arrow' => true,
-					]
-				);
-			}
+						[
+							'style'     => 'btn-primary',
+							'show_icon' => (bool) $button_show_icon,
+							'icon'      => $button_icon ?: 'star',
+						]
+					);
+				}
 			?>
 
 		</div>

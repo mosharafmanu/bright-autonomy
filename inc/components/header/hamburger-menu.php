@@ -39,9 +39,15 @@ if ( ! function_exists( 'bright_autonomy_render_mobile_navigation' ) ) {
 
 				<?php if ( $header_cta ) : ?>
 				<div class="mobile-nav-cta">
-					<a href="<?php echo esc_url( $header_cta['url'] ?? '#' ); ?>" class="site-btn btn-primary mobile-cta-btn"<?php echo isset( $header_cta['target'] ) && $header_cta['target'] ? ' target="' . esc_attr( $header_cta['target'] ) . '" rel="noopener noreferrer"' : ''; ?>>
-						<?php echo esc_html( $header_cta['title'] ?? 'Get Started' ); ?>
-					</a>
+					<?php
+					if ( function_exists( 'bright_autonomy_render_header_button' ) ) {
+						bright_autonomy_render_header_button(
+							[
+								'class' => 'mobile-cta-btn',
+							]
+						);
+					}
+					?>
 				</div>
 				<?php endif; ?>
 

@@ -96,7 +96,6 @@
 					[
 						'wrapper_class' => 'content-intro-buttons btns',
 						'default_style' => 'btn-primary',
-						'show_icon'     => true,
 					]
 				);
 			}

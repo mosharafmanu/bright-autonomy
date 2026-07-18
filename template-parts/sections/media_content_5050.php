@@ -2,6 +2,7 @@
     $eyebrow        = get_sub_field( 'mc5050_eyebrow' );                    // ACF Text Field : Section Eyebrow
     $title          = get_sub_field( 'mc5050_title' );                      // ACF Text Field : Section Title
     $body           = get_sub_field( 'mc5050_body' );                       // ACF WYSIWYG Editor Field : Section Body
+    $buttons        = get_sub_field( 'mc5050_buttons' );                    // ACF Repeater Field : Section Buttons
 
     $media_position = get_sub_field( 'mc5050_media_position' ) ?: 'right';  // ACF Button Group Field : Media Position left / right 
     $media_type     = get_sub_field( 'mc5050_media_type' ) ?: 'image';      // ACF Button Group Field : Media Type image / video 
@@ -65,7 +66,17 @@
                     <div class="mc5050-body wysiwyg-content"><?php echo wp_kses_post( $body ); ?></div>
                 <?php endif; ?>
 
-                
+                <?php
+                if ( $buttons && function_exists( 'bright_autonomy_render_buttons' ) ) {
+                    bright_autonomy_render_buttons(
+                        $buttons,
+                        [
+                            'wrapper_class' => 'mc5050-buttons btns',
+                            'default_style' => 'btn-primary',
+                        ]
+                    );
+                }
+                ?>
 
             </div>
 

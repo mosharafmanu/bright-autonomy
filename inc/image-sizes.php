@@ -35,5 +35,11 @@ add_filter( 'max_srcset_image_width', function() {
 
 add_filter( 'mime_types', function( $mimes ) {
 	$mimes['webp'] = 'image/webp';
+	$mimes['svg']  = 'image/svg+xml';
+	return $mimes;
+} );
+
+add_filter( 'upload_mimes', function( $mimes ) {
+	$mimes['svg'] = 'image/svg+xml';
 	return $mimes;
 } );

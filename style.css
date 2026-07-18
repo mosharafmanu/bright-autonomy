@@ -40,8 +40,8 @@ Design Tokens
     --bright-color-link:       var(--bright-color-accent);
 
     /* Typography */
-    --bright-font-heading: 'Roboto', sans-serif;
-    --bright-font-body:    'Roboto', sans-serif;
+    --bright-font-heading: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --bright-font-body:    'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
 	/* Container */
     --bright-container-max: 87rem;       /* 1392px */
